@@ -1,0 +1,115 @@
+# 🏅 Sistema de Badges — OdontoIA Livro Imersão
+# SPEC-951-R200
+
+badges:
+  - id: "B001"
+    nome: "Curioso Digital"
+    descricao: "Primeiro código Python odontológico rodado"
+    icone: "🔍"
+    xp: 100
+    requisito: "Rodar print('Olá, Odontologia + IA!') no Colab"
+    capitulo: 3
+    
+  - id: "B002"
+    nome: "Explorador de Dados"
+    descricao: "Carregou e visualizou um dataset odontológico"
+    icone: "📊"
+    xp: 200
+    requisito: "Carregar CSV de pacientes e gerar gráfico"
+    capitulo: 3
+    
+  - id: "B003"
+    nome: "Mestre da Imagem"
+    descricao: "Pré-processou uma radiografia com sucesso"
+    icone: "🖼️"
+    xp: 300
+    requisito: "Aplicar CLAHE + normalização em panorâmica"
+    capitulo: 4
+    
+  - id: "B004"
+    nome: "Especulador de Dados"
+    descricao: "Escreveu a primeira especificação SDD"
+    icone: "📋"
+    xp: 250
+    requisito: "Criar spec com Given-When-Then para função odontológica"
+    capitulo: 8
+    
+  - id: "B005"
+    nome: "Guerreiro TDD"
+    descricao: "Ciclo RED-GREEN-REFACTOR completo"
+    icone: "⚔️"
+    xp: 500
+    requisito: "3 ciclos TDD completos com pytest passando"
+    capitulo: 9
+    
+  - id: "B006"
+    nome: "Campeão do Colab"
+    descricao: "Rodou 5 notebooks no Google Colab"
+    icone: "🚀"
+    xp: 400
+    requisito: "5 notebooks executados sem erro"
+    capitulo: 10
+    
+  - id: "B007"
+    nome: "Detetive de IA"
+    descricao: "Interpretou Grad-CAM corretamente"
+    icone: "🔎"
+    xp: 600
+    requisito: "Gerar e interpretar mapa de ativação Grad-CAM"
+    capitulo: 11
+    
+  - id: "B008"
+    nome: "Mestre da Segmentação"
+    descricao: "Segmentou dentes com U-Net"
+    icone: "🧩"
+    xp: 700
+    requisito: "Dice Score > 0.85 em segmentação"
+    capitulo: 6
+    
+  - id: "B009"
+    nome: "Periodontista Digital"
+    descricao: "Completou o capítulo de Periodontia IA"
+    icone: "🦷"
+    xp: 1000
+    requisito: "Todos os desafios do capítulo 12"
+    capitulo: 12
+    
+  - id: "B010"
+    nome: "Arquiteto de Gêmeos"
+    descricao: "Criou um gêmeo digital funcional"
+    icone: "🔄"
+    xp: 1500
+    requisito: "Gêmeo digital funcional com dados reais"
+    capitulo: 13
+    
+  - id: "B011"
+    nome: "Curador de Conhecimento"
+    descricao: "Implementou pipeline RAG odontológico"
+    icone: "📚"
+    xp: 1200
+    requisito: "RAG funcional com artigos odontológicos"
+    capitulo: 14
+    
+  - id: "B012"
+    nome: "Auditor de IA"
+    descricao: "Realizou auditoria completa de um modelo"
+    icone: "✅"
+    xp: 800
+    requisito: "Relatório de auditoria com viés e fairness"
+    capitulo: 16
+    
+  - id: "B013"
+    nome: "Cientista Reprodutível"
+    descricao: "Publicou modelo no Hugging Face Hub"
+    icone: "♻️"
+    xp: 1000
+    requisito: "Modelo + demo Gradio + testes publicados"
+    capitulo: 17
+    
+  - id: "B014"
+    nome: "PhD em Odontologia IA"
+    descricao: "Livro completo — todos os desafios e capítulos"
+    icone: "🎓"
+    xp: 10000
+    requisito: "100% do livro, todos os badges anteriores"
+    capitulo: 28

@@ -1,0 +1,178 @@
+%==============================================================================
+% design-imersao.tex — Design Imersivo do OdontoIA
+% Elementos visuais para o Livro Imersão (SPEC-951-R200)
+% Autor: Edson Laranjeiras
+%==============================================================================
+
+%----------------------------------------------------------------------
+% CORES DO LIVRO IMERSÃO
+%----------------------------------------------------------------------
+\definecolor{CorPrincipal}{RGB}{0, 102, 204}        % Azul odontológico
+\definecolor{CorSecundaria}{RGB}{0, 170, 136}        % Verde saúde
+\definecolor{CorDestaque}{RGB}{255, 102, 0}          % Laranja IA
+\definecolor{CorBadge}{RGB}{255, 193, 7}             % Dourado badges
+\definecolor{CorNarrativa}{RGB}{156, 39, 176}        % Roxo narrativo
+\definecolor{CorQRCode}{RGB}{33, 33, 33}             % Preto QR
+\definecolor{CorPersona}{RGB}{233, 30, 99}           % Rosa personas
+\definecolor{CorDesafio}{RGB}{244, 67, 54}           % Vermelho desafio
+\definecolor{FundoSeção}{RGB}{240, 248, 255}         % Fundo azul claro
+\definecolor{FundoPrática}{RGB}{232, 245, 233}       % Fundo verde claro
+\definecolor{FundoCódigo}{RGB}{40, 44, 52}           % Dracula bg
+
+%----------------------------------------------------------------------
+% COMANDOS DE IMERSÃO
+%----------------------------------------------------------------------
+
+% ---- QR Code do Capítulo ----
+\newcommand{\qrchapter}[4]{%
+  \begin{center}
+  \fcolorbox{CorQRCode}{white}{%
+    \begin{minipage}{0.9\textwidth}
+    \small
+    \textbf{📱 Conteúdo Digital do Capítulo}
+    \hfill
+    \includegraphics[width=1.5cm]{ilustracoes/qrcode-modelo.png}
+    
+    \textbf{#1 — #2}
+    
+    \begin{itemize}
+      \item \textbf{Vídeo:} \texttt{#3} 
+      \item \textbf{Colab:} \texttt{#4}
+    \end{itemize}
+    
+    \textit{Escaneie o QR code ao lado ou acesse: 
+    \url{https://odontologia-ia.edsonlaranjeiras.com.br/cap#1}}
+    \end{minipage}%
+  }
+  \end{center}
+}
+
+% ---- Momento Narrativo (Persona) ----
+\newcommand{\personamoment}[2][Dra. Marina]{%
+  \begin{tcolorbox}[
+    colback=CorPersona!5,
+    colframe=CorPersona,
+    title={\textbf{🎭 #1}},
+    fonttitle=\bfseries,
+    leftrule=3mm,
+  ]
+  \textit{#2}
+  \tcblower
+  \small \textbf{Persona:} #1 | \textbf{Livro Imersão} OdontoIA
+  \end{tcolorbox}
+}
+
+% ---- Fala do Mentor ----
+\newcommand{\mentorbox}[1]{%
+  \begin{tcolorbox}[
+    colback=blue!5,
+    colframe=CorPrincipal,
+    title={\textbf{🧠 Prof. Dr. Lucas Tancredi}},
+    fonttitle=\bfseries,
+    leftrule=3mm,
+  ]
+  \textit{“#1”}
+  \end{tcolorbox}
+}
+
+% ---- Badge Alert ----
+\newcommand{\badgealert}[2]{%
+  \begin{tcolorbox}[
+    colback=CorBadge!10,
+    colframe=CorBadge,
+    title={\textbf{🏅 Badge Disponível: #1}},
+    fonttitle=\bfseries,
+    leftrule=3mm,
+  ]
+  #2
+  \end{tcolorbox}
+}
+
+% ---- Desafio do Capítulo ----
+\newcommand{\desafio}[2]{%
+  \begin{tcolorbox}[
+    colback=CorDesafio!5,
+    colframe=CorDesafio,
+    title={\textbf{🎮 Desafio: #1}},
+    fonttitle=\bfseries,
+    leftrule=3mm,
+  ]
+  #2
+  \tcblower
+  \small \textbf{Recompensa:} +300 XP | Badge: #1
+  \end{tcolorbox}
+}
+
+% ---- Progresso do Leitor ----
+\newcommand{\barraprogresso}[3]{%
+  \begin{center}
+  \small
+  \textbf{Nível #1: #2}
+  \hfill
+  \textcolor{CorDestaque}{\textbf{#3\%}}
+  
+  \begin{tikzpicture}
+    \fill[gray!20] (0,0) rectangle (10,0.4);
+    \fill[CorPrincipal] (0,0) rectangle (#3,0.4);
+  \end{tikzpicture}
+  
+  \textit{Próximo badge:} 🏅 (faltam \textbf{2 práticas})
+  \end{center}
+}
+
+% ---- Caso Clínico ----
+\newcommand{\casoclinico}[2]{%
+  \begin{tcolorbox}[
+    colback=CorSecundaria!5,
+    colframe=CorSecundaria,
+    title={\textbf{🦷 Caso Clínico: #1}},
+    fonttitle=\bfseries,
+    leftrule=3mm,
+  ]
+  #2
+  \end{tcolorbox}
+}
+
+% ---- Nota de Imersão (ícone de áudio/vídeo) ----
+\newcommand{\notaimersao}[2]{%
+  \textbf{#1} \textit{#2}%
+}
+
+% ---- QR Code inline ----
+\newcommand{\qrinline}[1]{%
+  \hfill \small [📱 \url{#1}]
+}
+
+% ---- Seção com nível de dificuldade imersivo ----
+\newcommand{\secaoimersiva}[2]{%
+  \subsection*{#1 \hfill \small #2}
+}
+
+% ---- Box de Podcast ----
+\newcommand{\podcastbox}[3]{%
+  \begin{tcolorbox}[
+    colback=gray!5,
+    colframe=CorDestaque,
+    title={\textbf{🎧 OdontoIA Cast — Ep. #1: #2}},
+    fonttitle=\bfseries,
+  ]
+  #3
+  \tcblower
+  \small Ouça em: \url{https://odontologia-ia.edsonlaranjeiras.com.br/podcast/#1}
+  \end{tcolorbox}
+}
+
+% ---- Box de Gamificação ----
+\newcommand{\gamificationbox}[1]{%
+  \begin{tcolorbox}[
+    colback=CorBadge!5,
+    colframe=CorBadge,
+    title={\textbf{🎮 Progresso}},
+    fonttitle=\bfseries,
+    leftrule=2mm,
+  ]
+  #1
+  \end{tcolorbox}
+}
+
+\endinput

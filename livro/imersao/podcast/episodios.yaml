@@ -1,0 +1,164 @@
+# 🎧 OdontoIA Cast — Episódios do Livro Imersão
+# SPEC-951-R200
+# Autor: Edson Laranjeiras
+
+serie: "OdontoIA Cast"
+subtitulo: "O podcast do Livro Imersão Odontologia & Inteligência Artificial"
+anfitriao: "Edson Laranjeiras"
+formato: "Entrevista + Discussão técnica + Dicas práticas"
+duracao_media: "25-35 minutos"
+periodicidade: "Semanal (acompanha o livro)"
+plataformas:
+  - "Spotify"
+  - "Apple Podcasts"
+  - "YouTube Music"
+  - "YouTube (versão vídeo com slides)"
+
+episodios:
+  - numero: 1
+    titulo: "A Odontologia Antes e Depois da IA"
+    capitulo: 1
+    convidado: "Prof. Dr. Lucas Tancredi"
+    descricao: >
+      Neste episódio de estreia, o Prof. Lucas Tancredi traça um panorama 
+      histórico da odontologia digital e explica por que a IA é a maior 
+      revolução desde a radiografia.
+    topicos:
+      - "Schleyer e o nascimento da informática odontológica"
+      - "Dos sistemas especialistas ao Deep Learning"
+      - "Por que todo dentista precisa entender IA"
+    destaque: "Analogia: 'IA é como ter um residente 24h analisando suas radiografias'"
+    xp_bonus: 100
+    
+  - numero: 2
+    titulo: "Machine Learning Explicado para Dentistas"
+    capitulo: 2
+    convidado: "Prof. Dr. Lucas Tancredi"
+    descricao: >
+      Conceitos de ML traduzidos para a linguagem odontológica. Sem 
+      matemática complicada — só analogias que fazem sentido na clínica.
+    topicos:
+      - "Aprendizado supervisionado vs não-supervisionado (com exemplos clínicos)"
+      - "Overfitting = decorar pacientes em vez de aprender a diagnosticar"
+      - "O que é uma rede neural (e por que ela 'funciona' em radiografias)"
+    destaque: "Se você entendeu periodontite, entendeu backpropagation"
+    xp_bonus: 100
+    
+  - numero: 3
+    titulo: "Python no Consultório? Sim, é Possível!"
+    capitulo: 3
+    convidado: "Dra. Marina Duarte (personagem)"
+    descricao: >
+      A Dra. Marina conta como superou o medo de programar e rodou seu 
+      primeiro código Python. Do 'nunca programei' ao Google Colab em 
+      24 horas.
+    topicos:
+      - "Por que Python e não outra linguagem?"
+      - "Google Colab: GPU grátis sem instalar nada"
+      - "Primeiros comandos: o 'Hello World' odontológico"
+    destaque: "Se a Dra. Marina conseguiu, você também consegue"
+    xp_bonus: 150
+    
+  - numero: 4
+    titulo: "Processamento de Imagens: Como o Computador 'Vê' uma Radiografia"
+    capitulo: 4
+    convidado: "Pesquisador visitante"
+    descricao: >
+      Uma radiografia para o computador é só uma matriz de números. Como 
+      transformar pixels em diagnóstico? Neste episódio, desvendamos o 
+      pré-processamento de imagens odontológicas.
+    topicos:
+      - "O que é um pixel? E uma imagem digital?"
+      - "DICOM: o padrão universal de imagens médicas"
+      - "CLAHE, normalização e aumento de dados"
+    destaque: "CLAHE não é um nome de doença — é o que deixa a radiografia nítida"
+    xp_bonus: 150
+    
+  - numero: 5
+    titulo: "CNNs: O Cérebro Artificial que Diagnostica Cáries"
+    capitulo: 5
+    convidado: "Pesquisador visitante"
+    descricao: >
+      Convolução, pooling, camadas densas — tudo explicado com analogias 
+      odontológicas. Entenda como uma CNN 'aprende' a ver cáries, lesões 
+      e perda óssea.
+    topicos:
+      - "Convolução = passar sonda periodontal na imagem"
+      - "Transfer Learning: pegar um modelo pronto e adaptar para odontologia"
+      - "Grad-CAM: 'onde a CNN está olhando?'"
+    destaque: "A CNN é uma lupa digital que aprende sozinha"
+    xp_bonus: 200
+    
+  - numero: 6
+    titulo: "Especificação Antes de Implementar: O Método SDD"
+    capitulo: 8
+    convidado: "Edson Laranjeiras (autor)"
+    descricao: >
+      Spec-Driven Development aplicado à odontologia. Por que escrever 
+      a especificação antes do código evita erros clínicos e economiza 
+      horas de trabalho.
+    topicos:
+      - "Given-When-Then para odontologia"
+      - "Exemplo: spec para detector de perda óssea"
+      - "SDD na prática clínica"
+    destaque: "Especificar é como fazer o planejamento do tratamento antes de tocar a broca"
+    xp_bonus: 200
+
+  - numero: 7
+    titulo: "TDD: O Dentista que Testa Antes de Entregar"
+    capitulo: 9
+    convidado: "Edson Laranjeiras (autor)"
+    descricao: >
+      Test-Driven Development é a diferença entre um modelo que funciona 
+      e um que quebra na hora do diagnóstico. Aprenda o ciclo 
+      RED-GREEN-REFACTOR com exemplos odontológicos.
+    topicos:
+      - "Por que dentistas deveriam amar TDD"
+      - "Pytest: como testar modelos de IA"
+      - "O caso do modelo que diagnosticava tudo como cárie"
+    destaque: "Teste antes, diagnostique com confiança"
+    xp_bonus: 200
+    
+  - numero: 8
+    titulo: "IA em Periodontia: O Estado da Arte"
+    capitulo: 12
+    convidado: "Periodontista convidado"
+    descricao: >
+      Deep Learning na periodontia: detecção de perda óssea, classificação 
+      de recessão gengival, predição de progressão. E o case real do 
+      Seu Raimundo.
+    topicos:
+      - "Classificação 2018 da periodontite com IA"
+      - "Chang et al. (2024) e outros estudos"
+      - "Periodontia de precisão"
+    destaque: "IA não substitui a sonda periodontal — potencializa"
+    xp_bonus: 250
+    
+  - numero: 9
+    titulo: "Gêmeos Digitais: O Paciente Virtual"
+    capitulo: 13
+    convidado: "Pesquisador em Digital Twins"
+    descricao: >
+      O que são gêmeos digitais em odontologia? Como criar uma réplica 
+      virtual do paciente? Do CBCT à simulação de tratamento.
+    topicos:
+      - "Gêmeo digital vs modelo 3D"
+      - "Planejamento virtual de implantes com FEM"
+      - "O futuro: hospital odontológico virtual"
+    destaque: "O gêmeo digital do Seu Raimundo salvou seus dentes"
+    xp_bonus: 250
+    
+  - numero: 10
+    titulo: "O Futuro da Odontologia (com IA ou sem ela)"
+    capitulo: 28
+    convidado: "Edson Laranjeiras (autor)"
+    descricao: >
+      Episódio de encerramento. O que esperar da odontologia nos próximos 
+      10 anos? O papel do dentista na era da IA. E como continuar 
+      aprendendo depois do livro.
+    topicos:
+      - "IA não vai substituir dentistas — mas dentistas com IA substituirão os sem IA"
+      - "Ética, LGPD e regulação"
+      - "Caminhos de carreira: dentista-pesquisador, dentista-desenvolvedor"
+    destaque: "O melhor momento para começar foi ontem. O segundo melhor é agora."
+    xp_bonus: 500

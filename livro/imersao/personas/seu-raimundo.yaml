@@ -1,0 +1,100 @@
+# 🎭 Paciente Recorrente — Seu Raimundo
+# OdontoIA: Livro Imersão
+# Autor: Edson Laranjeiras
+# SPEC-951-R200
+
+nome: "Raimundo Francisco da Silva"
+codigo: "RAI-001"
+tipo: paciente_recorrente
+
+## Biografia
+idade: 58
+genero: masculino
+profissao: "Aposentado (ex-motoboy)"
+localizacao: "Maceió, AL"
+estado_civil: casado
+filhos: 3
+
+## Condição Clínica Base
+diagnóstico_principal: "Periodontite crônica estágio III grau B"
+diagnóstico_secundario:
+  - "Diabetes tipo 2 (controlada)"
+  - "Hipertensão arterial sistêmica"
+  - "Tabagista (30 anos — parou há 2 anos)"
+  - "Edentulismo parcial (ausências: 16, 26, 36, 46)"
+  - "Restaurações insatisfatórias (25MOD, 35MOD)"
+
+histórico_tratamento:
+  - "Raspagem corono-radicular (2022)"
+  - "Exodontia do 26 (2023)"
+  - "Prótese parcial removível superior (2023)"
+
+## Arquivo Clínico Digital
+exames_disponiveis:
+  - tipo: "Radiografia panorâmica"
+    data: "2024-03-15"
+    arquivo: "seu-raimundo-panoramica-2024.dcm"
+    achados: "Perda óssea horizontal generalizada, cálculo dentário"
+    
+  - tipo: "CBCT"
+    data: "2024-03-20"
+    arquivo: "seu-raimundo-cbct-2024.dcm"
+    achados: "Perda óssea vertical na região do 36, defeito infraósseo"
+    
+  - tipo: "Fotos clínicas intraorais"
+    data: "2024-03-15"
+    arquivo: "seu-raimundo-fotos-2024.zip"
+    achados: "Sangramento à sondagem generalizado, recessão gengival"
+    
+  - tipo: "Hemograma completo"
+    data: "2024-03-10"
+    arquivo: "seu-raimundo-hemograma-2024.pdf"
+    achados: "Glicemia 126 mg/dL, PCR 5.2 mg/L"
+
+## Participação nos Capítulos
+participacao:
+  - capitulo: 1
+    cena: "Primeira consulta com a Dra. Marina. Radiografia panorâmica revela periodontite avançada."
+    tema_ia: "O que a IA poderia ter detectado antes?"
+    
+  - capitulo: 4
+    cena: "Marina escaneia a panorâmica do Seu Raimundo para pré-processamento no Colab"
+    tema_ia: "Pré-processamento de imagens odontológicas"
+    
+  - capitulo: 5
+    cena: "Classificação de perda óssea na panorâmica do Seu Raimundo com CNN"
+    tema_ia: "CNNs para diagnóstico periodontal"
+    
+  - capitulo: 7
+    cena: "CBCT do Seu Raimundo é segmentada com U-Net"
+    tema_ia: "Segmentação de defeitos ósseos"
+    
+  - capitulo: 12
+    cena: "Sistema de IA de Marina detecta progressão da periodontite nos exames de controle"
+    tema_ia: "IA em Periodontia — estágio e grau"
+    
+  - capitulo: 13
+    cena: "Gêmeo digital do Seu Raimundo simula diferentes planos de tratamento"
+    tema_ia: "Gêmeos Digitais em Odontologia"
+    
+  - capitulo: 23
+    cena: "RAG odontológico recupera artigos sobre periodontite + diabetes para o caso"
+    tema_ia: "RAG em Odontologia"
+
+## Frases Marcantes
+falas:
+  - "Doutora, esses dentes da frente tão 'bambo'... a senhora acha que vai cair?"
+  - "Meu Deus, o computador vai me operar agora?"
+  - "Se esse negócio de IA ajudar a não perder meus dentes, eu topo."
+  - "Dra. Marina, a senhora tá ficando é 'hacker' agora! Massa demais!"
+  
+## Detalhes Emocionais
+medos:
+  - "Perder todos os dentes como o pai dele"
+  - "Custo do tratamento"
+  - "Máquina substituindo o dentista"
+
+esperanças:
+  - "Manter os dentes naturais pelo maior tempo possível"
+  - "Tecnologia baratear o tratamento"
+  - "Ver os netos sorrindo"

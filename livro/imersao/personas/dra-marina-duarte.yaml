@@ -1,0 +1,83 @@
+# 🎭 Persona Principal — Dra. Marina Duarte
+# OdontoIA: Livro Imersão
+# Autor: Edson Laranjeiras
+# SPEC-951-R200
+
+nome: "Dra. Marina Duarte"
+codigo: "MAR-001"
+tipo: principal
+
+## Biografia
+idade: 34
+genero: feminino
+localizacao: "Maceió, AL"
+formacao:
+  - "Graduação em Odontologia — UFAL (2014)"
+  - "Especialização em Periodontia — CFO (2017)"
+  - "Mestrado em Ciências da Saúde — UFAL (2020)"
+
+especialidade: Periodontia
+atuacao: "Clínica particular + SUS (CEO Maceió)"
+experiencia_ia: "Nenhuma — nunca programou"
+nivel_inicial: 0  # 🟢 Curioso Digital
+
+## Jornada de Imersão
+jornada:
+  - etapa: "Descoberta"
+    capitulos: [1, 2, 3]
+    descricao: "Marina descobre que IA pode transformar sua prática clínica"
+    conflito: "Medo de não conseguir aprender por não ser 'de exatas'"
+    superacao: "Vê que Python é mais simples do que imaginava"
+    
+  - etapa: "Aprendizado"
+    capitulos: [4, 5, 6, 7]
+    descricao: "Marina entende CNNs e começa a rodar modelos no Colab"
+    conflito: "Dificuldade com álgebra linear e conceitos matemáticos"
+    superacao: "As notas de rodapé com analogias odontológicas ajudam"
+    
+  - etapa: "Construção"
+    capitulos: [8, 9, 10, 11]
+    descricao: "Marina escreve specs e testes — vira desenvolvedora"
+    conflito: "Acha TDD chato e desnecessário... até quebrar um modelo"
+    superacao: "Entende que testes salvam vidas em odontologia IA"
+    
+  - etapa: "Maestria"
+    capitulos: [12, 13, 14]
+    descricao: "Marina cria gêmeo digital do Seu Raimundo"
+    conflito: "Dados clínicos bagunçados, precisa organizar"
+    superacao: "Usa SDD para estruturar tudo"
+    
+  - etapa: "Transformação"
+    capitulos: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+    descricao: "Marina se torna referência em Odontologia IA"
+    conflito: "Dilemas éticos com IA na prática clínica"
+    superacao: "Encontra o equilíbrio entre tecnologia e cuidado humano"
+
+## Personalidade
+traços:
+  - "Perfeccionista" (vantagem: rigor clínico; desvantagem: medo de errar no código)
+  - "Empática" (vantagem: excelente com pacientes; desvantagem: resistência a 'desumanizar' a odontologia)
+  - "Determinada" (vantagem: não desiste; desvantagem: teimosa)
+  - "Curiosa" (vantagem: pergunta muito; desvantagem: se distrai com temas paralelos)
+
+## Citações da Persona
+falas:
+  - "Eu sou dentista, não programadora. Isso não é para mim."
+  - "Espere... o computador consegue ver o que eu vejo na radiografia?"
+  - "TDD é chato, mas funcionou. Meu modelo não quebrou na hora do pitch."
+  - "Seu Raimundo merece o melhor tratamento. Se a IA ajudar, vou usar."
+  - "No final, o sorriso do paciente é o que importa. A IA é só uma ferramenta."
+
+## Relações
+relacoes:
+  paciente_referencia: "Seu Raimundo (RAI-001)"
+  mentor: "Prof. Dr. Lucas Tancredi (LUC-001)"
+  rival_amigavel: "Dr. Carlos Mendes (periodontista tradicional)"
+  aluna: "Ana Beatriz (estagiária, aprende IA com Marina)"
+
+## Arco de Transformação
+arco:
+  inicio: "Cética em relação à IA na odontologia"
+  meio: "Praticante entusiasmada que roda modelos no Colab"
+  fim: "Inovadora que cria sistemas e orienta outros dentistas"
+  tema: "A tecnologia não substitui o dentista — o potencializa"

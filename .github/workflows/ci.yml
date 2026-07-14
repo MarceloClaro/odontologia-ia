@@ -1,0 +1,57 @@
+name: CI — OdontoIA Livro Imersão
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install Python dependencies
+        run: |
+          pip install pytest pyyaml qrcode[pil]
+
+      - name: Run imersão tests
+        run: |
+          python3 -m pytest livro/imersao/tests/ -v
+
+      - name: Run odontoia-pkg tests
+        run: |
+          if [ -d "src/odontoia-pkg" ]; then
+            pip install -e src/odontoia-pkg
+            python3 -m pytest src/odontoia-pkg/tests/ -v
+          fi
+
+  build-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-bibtex-extra biber
+
+      - name: Compile book
+        run: |
+          cd livro
+          xelatex -interaction=nonstopmode main.tex || true
+          bibtex main || true
+          xelatex -interaction=nonstopmode main.tex || true
+          xelatex -interaction=nonstopmode main.tex || true
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: odontoia-livro-imersao.pdf
+          path: livro/main.pdf

@@ -1,0 +1,78 @@
+# ============================================================================
+# Odontologia IA — Livro Imersão | .gitignore
+# ============================================================================
+
+# --- LaTeX ---
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.pdf
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.xdv
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.maf
+*.mtc
+*.mtc0
+*.pyg
+*.sbl
+*.sympy
+*.xml
+main-blx.bib
+_smoke.*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Projeto ---
+*.zip
+progresso_*.json
+qrcodes-manifest.json
+
+# --- Ambiente ---
+.env
+.env.local

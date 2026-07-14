@@ -1,0 +1,86 @@
+# 🎭 Mentor — Prof. Dr. Lucas Tancredi
+# OdontoIA: Livro Imersão
+# Autor: Edson Laranjeiras
+# SPEC-951-R200
+
+nome: "Prof. Dr. Lucas Tancredi"
+codigo: "LUC-001"
+tipo: mentor
+
+## Biografia
+idade: 52
+genero: masculino
+localizacao: "São Paulo, SP (original) / Remoto"
+
+formacao:
+  - "Graduação em Ciência da Computação — USP (1996)"
+  - "Mestrado em Inteligência Artificial — USP (1999)"
+  - "Doutorado em Bioinformática — Stanford (2004)"
+  - "Pós-Doutorado em IA Aplicada à Saúde — MIT (2006)"
+
+atuacao: "Professor Titular — Departamento de Computação, USP"
+linhas_pesquisa:
+  - "IA aplicada à saúde e odontologia"
+  - "Processamento de imagens médicas"
+  - "Sistemas especialistas e aprendizado de máquina"
+
+## Papel no Livro
+função: "Mentor virtual da Dra. Marina Duarte"
+estilo: "Socrático — faz perguntas que levam Marina às respostas"
+especialidade: "Traduz conceitos complexos de IA para linguagem odontológica"
+
+## Participação nos Capítulos
+participacao:
+  - capitulo: 1
+    tipo: "aparição"
+    contexto: "Marina assiste palestra online do Prof. Lucas sobre IA na Odontologia"
+    frase_chave: "A IA não substitui o dentista — potencializa."
+    
+  - capitulo: 2
+    tipo: "mentoria_remota"
+    contexto: "Marina manda e-mail para Lucas com dúvidas sobre ML"
+    frase_chave: "Machine Learning é como ensinar um estagiário: mostre exemplos, corrija erros, repita."
+    
+  - capitulo: 3
+    tipo: "video_chamada"
+    contexto: "Lucas mostra o Google Colab para Marina pela primeira vez"
+    frase_chave: "Python é seu novo bisturi digital."
+    
+  - capitulo: 5
+    tipo: "coaching"
+    contexto: "Marina não entende convolução; Lucas usa analogia com sonda periodontal"
+    frase_chave: "Convolução é passar a sonda em cada ponto — o kernel é a ponta da sonda."
+    
+  - capitulo: 8
+    tipo: "feedback"
+    contexto: "Marina mostra sua primeira spec SDD para Lucas"
+    frase_chave: "Especificar antes de implementar é como fazer o planejamento do tratamento antes de tocar a broca."
+    
+  - capitulo: 13
+    tipo: "colaboracao"
+    contexto: "Lucas ajuda Marina a arquitetar o gêmeo digital do Seu Raimundo"
+    frase_chave: "O gêmeo digital não é só o modelo 3D — são todos os dados do paciente integrados."
+    
+  - capitulo: 25
+    tipo: "debate"
+    contexto: "Marina e Lucas discutem os limites éticos da IA na odontologia"
+    frase_chave: "Tecnologia sem ética é broca sem freio."
+
+## Citações Icônicas
+citacoes:
+  - "A IA não substitui o dentista — potencializa."
+  - "Python é seu novo bisturi digital."
+  - "Dados ruins → IA burra. Dados bons → IA inteligente. Dados excelentes → IA que salva vidas."
+  - "O código que você escreve hoje pode diagnosticar um câncer bucal amanhã."
+  - "Se você não consegue explicar IA para um dentista, você não entendeu IA."
+  - "O futuro da odontologia não é mais tecnologia — é tecnologia com propósito."
+
+## Método de Ensino
+metodo:
+  abordagem: "Analogias odontológicas para conceitos de IA"
+  exemplos:
+    - "CNN é como olhar uma radiografia com lupa"
+    - "Backpropagation é como ajustar a técnica de raspagem"
+    - "Overfitting é como decorar os pacientes em vez de aprender a diagnosticar"
+    - "Transfer Learning é como pegar a técnica de outro profissional e adaptar"
+    - "RAG é como ter um livro didático aberto durante a prova"

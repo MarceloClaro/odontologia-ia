@@ -1,0 +1,90 @@
+# 🌐 Configuração da Comunidade — OdontoIA Livro Imersão
+# SPEC-951-R200
+# Autor: Edson Laranjeiras
+
+comunidade:
+  nome: "Comunidade OdontoIA"
+  descricao: "Espaço oficial dos leitores do Livro Imersão Odontologia & IA"
+
+discord:
+  enabled: true
+  servidor: "discord.gg/odontologia-ia"
+  canais:
+    - nome: "#boas-vindas"
+      descricao: "Apresente-se e conte sua história com odontologia e IA"
+      
+    - nome: "#duvidas-gerais"
+      descricao: "Tire dúvidas sobre qualquer capítulo do livro"
+      
+    - nome: "#desafios-semanais"
+      descricao: "Desafios de programação e odontologia toda segunda-feira"
+      
+    - nome: "#compartilhe-seu-projeto"
+      descricao: "Mostre seu modelo, notebook ou gêmeo digital"
+      
+    - nome: "#codigo-e-testes"
+      descricao: "Ajuda com Python, TDD, Colab e pytest"
+      
+    - nome: "#casos-clinicos-ia"
+      descricao: "Discuta casos clínicos onde a IA pode ajudar"
+      
+    - nome: "#encontros"
+      descricao: "Grupos de estudo por estado/região"
+      
+    - nome: "#vagas"
+      descricao: "Oportunidades em odontologia digital e IA em saúde"
+      
+    - nome: "#off-topic"
+      descricao: "Assuntos não-relacionados ao livro"
+      
+  regras:
+    - "Seja respeitoso — odontologia é uma profissão de cuidado"
+    - "Compartilhe conhecimento sem julgamento"
+    - "Spoilers do livro são permitidos (mas avise!)"
+    - "Código compartilhado deve vir com testes"
+    - "Não use IA para diagnosticar pacientes reais sem supervisão"
+
+github:
+  enabled: true
+  repositorio: "edsonlaranjeiras/odontologia-ia"
+  discussions:
+    categorias:
+      - name: "Dúvidas sobre o Livro"
+        descricao: "Perguntas sobre capítulos, conceitos e exercícios"
+        
+      - name: "Ideias e Sugestões"
+        descricao: "Propostas de melhoria para o livro e o ecossistema"
+        
+      - name: "Compartilhe seu Código"
+        descricao: "Notebooks, modelos e projetos criados durante a leitura"
+        
+      - name: "Correções e Erratas"
+        descricao: "Reporte erros encontrados no livro ou nos códigos"
+
+eventos_semanais:
+  segunda:
+    evento: "Desafio da Semana"
+    descricao: "Exercício prático relacionado ao capítulo da semana"
+    premio: "Badge especial + destaque na newsletter"
+    
+  quarta:
+    evento: "Live de Dúvidas"
+    plataforma: "YouTube"
+    horario: "20h BRT"
+    descricao: "Sessão ao vivo de perguntas e respostas com o autor"
+    
+  sexta:
+    evento: "Sexta de Projetos"
+    descricao: "Compartilhamento de projetos no Discord"
+    premio: "Feedback do autor e da comunidade"
+
+newsletter:
+  enabled: true
+  nome: "OdontoIA News"
+  frequencia: "Semanal (segunda-feira)"
+  conteudo:
+    - "Resumo do capítulo da semana"
+    - "Dica de código ou ferramenta"
+    - "Artigo científico recomendado"
+    - "Projeto em destaque da comunidade"
+    - "Calendário de eventos"
