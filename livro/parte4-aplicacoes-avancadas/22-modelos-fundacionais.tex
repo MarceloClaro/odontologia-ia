@@ -10,6 +10,24 @@
 \textit{``Modelos fundacionais representam uma mudança de paradigma: em vez de treinar uma rede neural para cada tarefa odontológica específica, um único modelo pré-treinado em dados massivos pode ser adaptado --- ou mesmo usado diretamente --- para dezenas de aplicações clínicas.''}
 \end{quote}
 
+A inteligência artificial atravessa uma mudança de paradigma: em vez de treinar um modelo para cada tarefa odontológica específica --- uma CNN para cárie, outra para periodontite, uma terceira para lesões periapicais --- os modelos fundacionais oferecem uma alternativa disruptiva, na qual um único modelo pré-treinado em dados massivos pode ser adaptado para múltiplas aplicações com mínimo esforço adicional. O SAM (Segment Anything Model), os Vision Transformers, o BiomedCLIP e os grandes modelos de linguagem (GPT, LLaMA, Claude) representam esta nova geração de ferramentas que está democratizando o acesso à IA de ponta. A citação inicial captura a essência desta transição conceitual e anuncia a jornada que faremos por cada um destes modelos, explorando suas capacidades, limitações e aplicações práticas no contexto odontológico.
+
+\subsection{Objetivos de Aprendizagem}
+
+Ao final deste capítulo, você será capaz de:
+
+\subsubsection{Compreender o Paradigma dos Modelos Fundacionais}
+Você entenderá como um único modelo pré-treinado em dados massivos pode ser adaptado para dezenas de aplicações clínicas odontológicas.
+
+\subsubsection{Aplicar o SAM à Segmentação de Dentes e Lesões}
+Exploraremos o Segment Anything Model com prompts de ponto e bounding box para segmentar dentes e lesões periapicais zero-shot.
+
+\subsubsection{Usar Vision Transformers para Análise de Radiografias}
+Você aprenderá como a arquitetura baseada em atenção supera CNNs em tarefas de classificação de patologias odontológicas.
+
+\subsubsection{Identificar Alucinações em LLMs e Estratégias de Mitigação}
+Discutiremos como GPT, LLaMA e Claude podem auxiliar na documentação clínica e como verificar a veracidade das informações geradas.
+
 \section{Introdução: O Paradigma do Modelo Fundacional}
 
 A inteligência artificial vive uma transição conceitual profunda. Historicamente, cada aplicação odontológica demandava um modelo treinado do zero ou via \textit{transfer learning} para uma tarefa específica: uma CNN para classificar cárie, outra para periodontite, uma terceira para lesões periapicais, e assim por diante. O paradigma do modelo fundacional (\textit{foundation model}) inverte esta lógica: um único modelo de grande escala, pré-treinado em dados massivos e diversos, adquire capacidades genéricas que podem ser reaproveitadas para múltiplas tarefas com mínimo ou nenhum ajuste adicional.

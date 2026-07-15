@@ -9,17 +9,29 @@
 
 \nivelbasico
 
-\section{Objetivos de Aprendizagem}
+Antes de mergulhar nas arquiteturas complexas de deep learning que dominam os capítulos seguintes, é fundamental compreender os alicerces sobre os quais a inteligência artificial moderna foi construída. Este capítulo apresenta os cinco principais algoritmos de machine learning clássico — regressão logística, Random Forest, SVM, XGBoost e KNN — com aplicações diretas a problemas odontológicos como predição de risco de cárie, classificação de periodontite e análise de features radiômicas. Algoritmos clássicos ainda são a melhor escolha para dados tabulares clínicos, oferecendo desempenho competitivo com interpretabilidade muito superior à de redes neurais profundas.
 
-Ao final deste capítulo, o leitor será capaz de:
-\begin{enumerate}
-    \item Compreender os fundamentos matemáticos e a aplicação clínica dos cinco principais algoritmos de machine learning clássico em odontologia: regressão logística, Random Forest, SVM, XGBoost e KNN;
-    \item Selecionar o algoritmo apropriado para cada tipo de problema odontológico (classificação binária, multiclasse, predição de risco, similaridade de casos);
-    \item Implementar, treinar, validar e interpretar modelos de ML clássico usando Scikit-learn e XGBoost;
-    \item Analisar feature importance para identificar as variáveis clínicas mais preditivas;
-    \item Diagnosticar e mitigar overfitting e underfitting utilizando validação cruzada e regularização;
-    \item Aplicar o protocolo TDD ao desenvolvimento de modelos preditivos odontológicos.
-\end{enumerate}
+\subsection{Objetivos de Aprendizagem}
+
+Ao final deste capítulo, você será capaz de:
+
+\subsubsection{Compreender os Fundamentos dos Cinco Principais Algoritmos de ML}
+Aprenderá os princípios matemáticos por trás da regressão logística, Random Forest, SVM, XGBoost e KNN, com exemplos odontológicos concretos para cada um.
+
+\subsubsection{Selecionar o Algoritmo Certo para Cada Problema Odontológico}
+Saberá escolher entre os cinco algoritmos com base no tipo de dado, tamanho da amostra e necessidade de interpretabilidade clínica.
+
+\subsubsection{Implementar Modelos de ML com Scikit-learn e XGBoost}
+Construirá pipelines completos de machine learning -- do pré-processamento à avaliação -- utilizando as bibliotecas padrão do ecossistema Python.
+
+\subsubsection{Analisar Feature Importance para Identificar Variáveis Preditivas}
+Interpretará os gráficos de importância de features gerados por Random Forest e XGBoost, extraindo insights clínicos para orientar decisões.
+
+\subsubsection{Diagnosticar e Mitigar Overfitting e Underfitting}
+Aprenderá a identificar sinais de overfitting e underfitting, aplicando validação cruzada e regularização para construir modelos robustos.
+
+\subsubsection{Aplicar TDD ao Desenvolvimento de Modelos Preditivos}
+Integrará testes automatizados ao pipeline de ML, garantindo a integridade dos dados, o particionamento correto e a reprodutibilidade dos resultados.
 
 \section{Fundamentação Teórica}
 

@@ -10,6 +10,24 @@
 \textit{``O sucesso de um implante dentário depende de diagnóstico preciso, planejamento meticuloso e execução previsível. A inteligência artificial está redefinindo cada uma dessas etapas, da classificação óssea automática à predição de osseointegração.''}
 \end{quote}
 
+A implantodontia vive uma revolução silenciosa: o planejamento virtual, antes restrito a centros de referência, tornou-se padrão de cuidado, e a inteligência artificial começa a automatizar etapas críticas como classificação óssea, segmentação de estruturas nobres e predição de osseointegração. Este capítulo guia o leitor pelas aplicações da IA em implantodontia, desde a classificação automática da qualidade óssea (Lekholm \& Zarb) por meio de CNNs 3D até a predição de sucesso de implantes com radiomics e aprendizado federado. A citação introdutória sintetiza a tese central --- que a IA está redefinindo cada etapa da reabilitação implantossuportada --- e convida o leitor a compreender como modelos de deep learning podem auxiliar o implantologista no diagnóstico, planejamento e prognóstico de casos complexos.
+
+\subsection{Objetivos de Aprendizagem}
+
+Ao final deste capítulo, você será capaz de:
+
+\subsubsection{Classificar Qualidade Óssea com Deep Learning}
+Você implementará modelos baseados em CBCT para classificação automática de tipos ósseos de Lekholm \& Zarb, comparando o desempenho com implantologistas.
+
+\subsubsection{Predizer Osseointegração com Features Radiográficas}
+Exploraremos arquiteturas 3D e séries temporais para predizer o sucesso de implantes com até 12 meses de antecedência.
+
+\subsubsection{Integrar Segmentação de Seio Maxilar e Estruturas Nobres}
+Você aprenderá a segmentar automaticamente o nervo alveolar inferior e o seio maxilar para planejamento cirúrgico seguro.
+
+\subsubsection{Desenvolver um Pipeline de Implantodontia Guiada por IA}
+Ao final, você construirá um sistema completo que integra classificação óssea, segmentação e predição de osseointegração.
+
 \section{Introdução: O Planejamento Virtual como Novo Padrão}
 
 A implantodontia moderna é indissociável do planejamento digital. Do escaneamento intraoral à tomografia computadorizada de feixe cônico (CBCT), da fusão de imagens ao guia cirúrgico impresso em 3D, a especialidade abraçou a digitalização com intensidade comparável apenas à ortodontia. Entretanto, o planejamento de implantes permanece uma tarefa que demanda expertise significativa: posição tridimensional ideal, avaliação da qualidade e quantidade óssea, proximidade a estruturas nobres (nervo alveolar inferior, seio maxilar, forame mentual), seleção do diâmetro e comprimento do implante, e previsão do resultado protético final.

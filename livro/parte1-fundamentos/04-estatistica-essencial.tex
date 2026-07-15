@@ -9,17 +9,29 @@
 
 \nivelbasico
 
-\section{Objetivos de Aprendizagem}
+A inteligência artificial, em sua essência, é estatística computacional em escala: cada predição de um modelo é uma probabilidade condicionada aos dados de treinamento, e cada métrica de desempenho é uma medida estatística que precisa ser interpretada com precisão. Este capítulo fornece o vocabulário estatístico mínimo — média, mediana, desvio padrão, intervalo de confiança, p-valor, sensibilidade, especificidade, AUC-ROC e F1-score — para que o profissional de odontologia possa avaliar criticamente artigos de IA, identificar vieses metodológicos como data leakage e overfitting, e distinguir associações espúrias de evidências clinicamente relevantes.
 
-Ao final deste capítulo, o leitor será capaz de:
-\begin{enumerate}
-    \item Calcular e interpretar medidas de tendência central e dispersão em dados clínicos odontológicos;
-    \item Compreender o significado de intervalos de confiança e p-valores no contexto de estudos de IA diagnóstica;
-    \item Diferenciar e calcular sensibilidade, especificidade, VPP, VPN, acurácia, precisão, recall e F1-score;
-    \item Interpretar curvas ROC, AUC e matrizes de confusão no contexto clínico odontológico;
-    \item Identificar e evitar vieses estatísticos comuns em estudos de IA: seleção, espectro, data leakage e overfitting;
-    \item Compreender a diferença entre validação interna e externa e suas implicações para a generalização clínica.
-\end{enumerate}
+\subsection{Objetivos de Aprendizagem}
+
+Ao final deste capítulo, você será capaz de:
+
+\subsubsection{Calcular e Interpretar Medidas Estatísticas em Dados Clínicos}
+Aprenderá a calcular média, mediana, variância e desvio padrão, aplicando-as a dados odontológicos como CPOD e profundidade de sondagem.
+
+\subsubsection{Compreender Intervalos de Confiança e P-Valores em IA}
+Entenderá como interpretar IC95\% e p-valores na avaliação de modelos diagnósticos, evitando os erros de interpretação mais comuns na literatura.
+
+\subsubsection{Diferenciar e Calcular Métricas de Desempenho Diagnóstico}
+Dominará as métricas da matriz de confusão -- sensibilidade, especificidade, VPP, VPN, acurácia, precisão, recall e F1-score -- sabendo qual utilizar em cada contexto clínico.
+
+\subsubsection{Interpretar Curvas ROC, AUC e Matrizes de Confusão}
+Analisará curvas ROC e matrizes de confusão, extraindo delas decisões clinicamente relevantes para diagnóstico e triagem em odontologia.
+
+\subsubsection{Identificar e Evitar Vieses Estatísticos em IA Odontológica}
+Reconhecerá os quatro vieses mais frequentes -- seleção, espectro, data leakage e overfitting -- e como mitigá-los no desenho do estudo.
+
+\subsubsection{Compreender Validação Interna vs. Externa e Generalização}
+Distinguirá os tipos de validação e entenderá por que a validação externa é o verdadeiro teste de utilidade clínica de um modelo de IA.
 
 \section{Fundamentação Teórica}
 
