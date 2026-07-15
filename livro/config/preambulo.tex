@@ -25,12 +25,22 @@
 % Espaçamento 1,5 entre linhas (NBR 14724)
 \OnehalfSpacing
 
-% Profundidade do sumário (até subsubseção)
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
+% Profundidade do sumário (até subsubseção) — NBR 6024
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 
-% Numeração de capítulos em algarismos arábicos (NBR 6024)
+% Numeração progressiva completa: 1 → 1.1 → 1.1.1 → 1.1.1.1
+% Conforme NBR 6024 (Numeração progressiva das seções de um documento)
 \renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% Garantir que parágrafos também sigam a numeração se necessário
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+
+% NBR 6024: títulos sem numeração própria (sumário, listas, referências etc.)
+% já são tratados pela classe abntex2
 
 % Formatação de títulos conforme ABNT
 \renewcommand{\ABNTEXchapterfont}{\bfseries}
