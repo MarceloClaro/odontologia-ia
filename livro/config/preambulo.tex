@@ -42,11 +42,40 @@
 % NBR 6024: títulos sem numeração própria (sumário, listas, referências etc.)
 % já são tratados pela classe abntex2
 
-% Formatação de títulos conforme ABNT
+% Formatação de títulos conforme NBR 6024:2012 (Numeração Progressiva)
+% Hierarquia tipográfica obrigatória: maiúscula, negrito, itálico
+% Seção primária   (capítulo):       MAIÚSCULAS + NEGRITO
+% Seção secundária (seção):          MAIÚSCULAS + NEGRITO
+% Seção terciária  (subseção):       Primeira maiúscula + NEGRITO
+% Seção quaternária (subsubseção):   Primeira maiúscula + ITÁLICO (sem negrito)
 \renewcommand{\ABNTEXchapterfont}{\bfseries}
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 \renewcommand{\ABNTEXsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsubsectionfont}{\itshape\mdseries}
+
+% NBR 6024 §4.1.d: nenhum sinal (ponto/travessão/hífen) entre o indicativo
+% e o título — já é padrão do abntex2 (confirmação explícita)
+% NBR 6024 §4.1.j: destaques hierárquicos idênticos no sumário e no texto
+
+%==============================================================================
+% CONFIGURAÇÕES ADICIONAIS — NBR 14724:2024
+%==============================================================================
+
+% Notas de rodapé (NBR 14724 §5.7): fonte 10pt, alinhamento justificado,
+% separadas do texto por filete de 5cm
+\renewcommand{\footnoterule}{%
+  \kern-3pt\noindent\rule{5cm}{0.4pt}\kern2.6pt}
+\setlength{\footnotesep}{1.5\baselineskip}
+
+% Citações longas (NBR 10520:2023): recuo 4cm, fonte 10pt,
+% espaçamento simples — já configurado pela classe abntex2 (ambiente citacao)
+
+% Legendas (NBR 14724 §5.9): justificadas, fonte 10pt, negrito no rótulo
+% — já configurado via captionsetup acima
+
+% Destaque tipográfico hierárquico idêntico no sumário e no texto (NBR 6024 §4.1.j)
+% é automático no abntex2 pois usa os mesmos comandos de formatação
 
 % Estilo de página
 \pagestyle{abntheadings}

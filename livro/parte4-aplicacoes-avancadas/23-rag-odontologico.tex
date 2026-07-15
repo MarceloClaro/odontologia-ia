@@ -12,20 +12,20 @@
 
 Um grande modelo de linguagem sem acesso à literatura científica contemporânea é como um dentista sem acesso a artigos: tem boa formação, mas seu conhecimento inevitavelmente se desatualiza e suas recomendações podem ser imprecisas. O RAG (Retrieval-Augmented Generation) resolve este problema ao ancorar cada resposta em evidências recuperadas em tempo real de uma base de conhecimento externa --- artigos do PubMed, diretrizes clínicas, revisões sistemáticas. Este capítulo apresenta a arquitetura completa do RAG, desde a indexação de documentos e geração de embeddings até a recuperação semântica e geração condicionada, com foco em aplicações odontológicas. A citação que abre este capítulo captura com precisão o espírito desta tecnologia: a síntese entre o conhecimento generalista dos LLMs e a precisão factual da literatura científica, tema que exploraremos em profundidade nas seções seguintes.
 
-\subsection{Objetivos de Aprendizagem}
+\section{Objetivos de Aprendizagem}
 
 Ao final deste capítulo, você será capaz de:
 
-\subsubsection{Compreender o Problema do Conhecimento Estático em LLMs}
+\subsection{Compreender o Problema do Conhecimento Estático em LLMs}
 Você entenderá por que modelos de linguagem puros são insuficientes para responder perguntas clínicas atualizadas sem acesso a bases externas.
 
-\subsubsection{Dominar a Arquitetura RAG: Indexação, Recuperação e Geração}
+\subsection{Dominar a Arquitetura RAG: Indexação, Recuperação e Geração}
 Exploraremos cada componente do RAG --- embedding, banco vetorial, busca semântica e prompt aumentado --- com foco odontológico.
 
-\subsubsection{Construir uma Base Vetorial com Artigos Odontológicos}
+\subsection{Construir uma Base Vetorial com Artigos Odontológicos}
 Você implementará um pipeline de ingestão de PDFs científicos com extração de trechos, metadados e DOIs para rastreabilidade.
 
-\subsubsection{Controlar Alucinações e Garantir Evidência nas Respostas}
+\subsection{Controlar Alucinações e Garantir Evidência nas Respostas}
 Aprenderá técnicas para que o sistema só responda com base em fontes recuperadas, reduzindo riscos de informação incorreta.
 
 \section{Introdução: O Problema do Conhecimento Estático}
