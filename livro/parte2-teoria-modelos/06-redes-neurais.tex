@@ -47,6 +47,8 @@ No modelo computacional, o neurônio artificial é uma unidade de processamento 
 
 \subsection{O Perceptron de Rosenblatt}
 
+\subsubsection{O Algoritmo do Perceptron}
+
 Frank Rosenblatt (1958) implementou o perceptron --- o primeiro neurônio artificial
 treinável --- no hardware Mark I Perceptron. O algoritmo de aprendizado do perceptron
 é notavelmente simples:
@@ -70,6 +72,8 @@ Onde $\eta$ é a taxa de aprendizado (\textit{learning rate}) e $(y^{(j)} - \hat
 é o erro de classificação. O algoritmo converge em um número finito de passos apenas
 quando os dados são linearmente separáveis --- o que motivou a criação de arquiteturas
 mais complexas.
+
+\subsubsection{Limitações do Perceptron}
 
 \begin{table}[H]
   \centering
@@ -130,6 +134,8 @@ de saturação nos extremos.
 
 \subsection{ReLU (\textit{Rectified Linear Unit})}
 
+\subsubsection{Definição e Propriedades}
+
 A ReLU é a função de ativação mais utilizada em arquiteturas CNN modernas, inclusive
 nas aplicações odontológicas revisadas por \citeonline{DL-ODT-004}.
 
@@ -148,6 +154,8 @@ do SGD em $6\times$ comparado à sigmoide/$\tanh$ \cite{lecun2015deep}.
 \textbf{Desvantagens:} ``neurônios mortos'' --- quando $z \leq 0$, o gradiente é zero
 e o neurônio para de aprender permanentemente. Este problema pode afetar até 40\%
 das unidades em arquiteturas profundas.
+
+\subsubsection{Variantes da ReLU}
 
 \textbf{Variantes que mitigam neurônios mortos:}
 \begin{itemize}
@@ -361,6 +369,8 @@ de $m$ exemplos, ao invés do dataset completo (Batch GD) ou de um único exempl
   \label{eq:sgd}
 \end{equation}
 
+\subsubsection{Hiperparâmetros do SGD}
+
 \textbf{Hiperparâmetros do SGD:}
 \begin{itemize}
   \item $\eta$ (learning rate): tipicamente $10^{-3}$ a $10^{-1}$
@@ -457,6 +467,8 @@ reportando melhoria de 3.2\% na acurácia de validação.
 
 \subsection{Dropout}
 
+\subsubsection{Mecanismo do Dropout}
+
 Dropout (Srivastava et al., 2014) é a técnica de regularização mais eficaz para
 redes profundas. Durante o treinamento, cada neurônio tem probabilidade $p$ de
 ser temporariamente ``desligado'' (sua saída é zerada):
@@ -473,6 +485,8 @@ escalonadas por $(1-p)$ para compensar a ausência de dropout:
   a_i^{(l),\text{test}} = (1-p) \cdot a_i^{(l)}
   \label{eq:dropout-test}
 \end{equation}
+
+\subsubsection{Taxas de Dropout Típicas}
 
 \textbf{Taxas de dropout típicas em CNNs odontológicas:}
 \begin{itemize}
@@ -495,6 +509,8 @@ quando a perda de validação para de melhorar por $k$ épocas consecutivas
 
 \subsection{Batch Normalization}
 
+\subsubsection{Mecanismo da Batch Normalization}
+
 Batch Normalization (BN), proposta por Ioffe \& Szegedy (2015), normaliza as
 ativações de cada camada para média zero e variância unitária durante o treinamento,
 permitindo taxas de aprendizado mais altas e atuando como regularizador:
@@ -508,6 +524,8 @@ permitindo taxas de aprendizado mais altas e atuando como regularizador:
 
 Os parâmetros $\gamma$ (escala) e $\beta$ (deslocamento) são aprendidos,
 permitindo que a rede ``desfaça'' a normalização se necessário.
+
+\subsubsection{Benefícios para CNNs Odontológicas}
 
 \textbf{Benefícios da BN em CNNs odontológicas:}
 \begin{enumerate}

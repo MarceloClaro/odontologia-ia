@@ -125,7 +125,11 @@ Uma das maiores vantagens da regressão logística é a interpretabilidade diret
 
 Random Forest \indice{Random Forest} é um algoritmo de ensemble (conjunto) que combina centenas de árvores de decisão, cada uma treinada em uma amostra bootstrap (com reposição) dos dados, usando um subconjunto aleatório das features em cada divisão.
 
+\subsubsection{Intuição do Algoritmo}
+
 \textbf{Intuição:} Imagine 500 dentistas independentes, cada um treinado com um subconjunto ligeiramente diferente de casos clínicos. Cada dentista faz seu diagnóstico. O diagnóstico final é o voto da maioria. A Random Forest implementa exatamente esta ideia, substituindo dentistas por árvores de decisão.
+
+\subsubsection{Vantagens para Odontologia}
 
 \textbf{Vantagens:}
 \begin{itemize}
@@ -189,7 +193,11 @@ Li et al. (2024) \cite{ODT-028} expandiram esta abordagem com uma estratégia h�
 
 \subsection{Fundamentos: Gradient Boosting Extremo}
 
+\subsubsection{O que é o XGBoost?}
+
 XGBoost (eXtreme Gradient Boosting) \indice{XGBoost} é o algoritmo que domina competições de machine learning em dados tabulares. Constrói sequencialmente árvores de decisão, onde cada nova árvore tenta corrigir os erros das árvores anteriores.
+
+\subsubsection{Diferenças e Vantagens}
 
 \textbf{Diferença crucial do Random Forest:}
 \begin{itemize}
@@ -429,12 +437,16 @@ A escolha de hiperparâmetros pode ser a diferença entre um modelo inútil e um
 
 \subsection{Estratégias de Otimização de Hiperparâmetros}
 
+\subsubsection{Métodos de Busca de Hiperparâmetros}
+
 \begin{description}
     \item[Grid Search.] Testa todas as combinações de uma grade pré-definida de valores. Exaustivo, mas computacionalmente caro. Exemplo: testar \texttt{C = [0.01, 0.1, 1, 10, 100]} e \texttt{gamma = [0.001, 0.01, 0.1, 1]} para SVM — 5 $\times$ 4 = 20 combinações.
     \item[Random Search.] Amostra aleatoriamente $N$ combinações do espaço de hiperparâmetros. Mais eficiente que Grid Search quando apenas alguns hiperparâmetros são realmente importantes.
     \item[Bayesian Optimization.] Constrói um modelo probabilístico da função objetivo (ex.: AUC em função dos hiperparâmetros) e escolhe inteligentemente a próxima combinação a testar. Mais eficiente que Random Search para espaços de alta dimensionalidade.
     \item[Optuna / Hyperopt.] Frameworks Python que implementam otimização bayesiana com recursos avançados como pruning (interromper testes ruins precocemente).
 \end{description}
+
+\subsubsection{Boas Práticas para Otimização}
 
 \textbf{Boas práticas:}
 \begin{itemize}
@@ -447,6 +459,8 @@ A escolha de hiperparâmetros pode ser a diferença entre um modelo inútil e um
 
 \subsection{Stacking: Quando Votação Simples Não Basta}
 
+\subsubsection{Conceito de Stacking}
+
 Stacking (Stacked Generalization) \indice{stacking} é uma técnica de meta-aprendizado: em vez de simplesmente votar, um metamodelo aprende a ponderar as predições de múltiplos modelos base.
 
 \textbf{Exemplo odontológico:}
@@ -454,6 +468,8 @@ Stacking (Stacked Generalization) \indice{stacking} é uma técnica de meta-apre
     \item \textbf{Modelos base (Level 0):} Regressão logística, Random Forest, SVM, XGBoost — treinados nos dados originais.
     \item \textbf{Metamodelo (Level 1):} Regressão logística treinada nas predições dos modelos base como features.
 \end{enumerate}
+
+\subsubsection{Vantagem sobre a Votação Simples}
 
 O metamodelo aprende, por exemplo, que quando Random Forest e XGBoost concordam, a predição é muito confiável; quando discordam, a SVM frequentemente está correta. Esta informação de ``confiabilidade condicional'' não está disponível na votação simples.
 
@@ -512,6 +528,8 @@ Silva et al. (2023) \cite{ODT-056} analisaram 850 implantes com 12 meses de acom
 
 \subsection{Resultados e Interpretação Clínica}
 
+\subsubsection{Performance do Modelo}
+
 XGBoost atingiu AUC de 0.91, superando significativamente modelos baseados apenas em parâmetros clínicos (AUC 0.78):
 
 \begin{enumerate}
@@ -523,6 +541,8 @@ XGBoost atingiu AUC de 0.91, superando significativamente modelos baseados apena
     
     \item \textbf{Interações não-lineares.} O XGBoost capturou que o efeito do tabagismo é amplificado em maxila posterior (osso tipo IV) — uma interação que modelos lineares não detectariam.
 \end{enumerate}
+
+\subsubsection{Implicações Clínicas}
 
 Este caso ilustra o valor do ML clássico além da mera predição: o modelo revela relações clinicamente relevantes que podem guiar a tomada de decisão (ex.: ``este paciente fumante com osso de baixa densidade na maxila posterior tem risco de falha de 35\% — considere enxerto ósseo prévio'').
 

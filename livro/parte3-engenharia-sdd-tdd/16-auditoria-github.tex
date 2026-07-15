@@ -204,7 +204,7 @@ O bug foi reportado como issue e corrigido em fork.}
 
 \section{Estudos de Caso}
 
-\subsection{OdontoAI — Classification}
+\subsubsection{OdontoAI — Classification}
 
 \begin{description}
   \item[URL] \url{https://github.com/odontoai/classification}
@@ -215,7 +215,7 @@ O bug foi reportado como issue e corrigido em fork.}
   \item[Recomendação] Adequado para pesquisa com adição de testes TDD.
 \end{description}
 
-\subsection{DENTEX — Dental Enumeration and Diagnosis}
+\subsubsection{DENTEX — Dental Enumeration and Diagnosis}
 
 \begin{description}
   \item[URL] \url{https://github.com/ibrahimethemhamamci/DENTEX}
@@ -227,7 +227,7 @@ O bug foi reportado como issue e corrigido em fork.}
     ao dataset local.
 \end{description}
 
-\subsection{ToothSeg — Tooth Segmentation}
+\subsubsection{ToothSeg — Tooth Segmentation}
 
 \begin{description}
   \item[URL] \url{https://github.com/liangjiubujiu/ToothSeg}
@@ -240,7 +240,7 @@ O bug foi reportado como issue e corrigido em fork.}
     segmentação, mas requer auditoria completa antes de uso em pesquisa.
 \end{description}
 
-\subsection{MeshSegNet — 3D Dental Mesh Segmentation}
+\subsubsection{MeshSegNet — 3D Dental Mesh Segmentation}
 
 \begin{description}
   \item[URL] \url{https://github.com/Tai-Hsien/MeshSegNet}
@@ -252,7 +252,7 @@ O bug foi reportado como issue e corrigido em fork.}
   \item[Recomendação] Excelente para pesquisa em gêmeos digitais 3D.
 \end{description}
 
-\subsection{MLUA — Machine Learning in Ultrasound Analysis}
+\subsubsection{MLUA — Machine Learning in Ultrasound Analysis}
 
 \begin{description}
   \item[URL] \url{https://github.com/anonymous-dental/MLUA}
@@ -265,7 +265,7 @@ O bug foi reportado como issue e corrigido em fork.}
     constitui risco jurídico e científico.
 \end{description}
 
-\subsection{DentalMIM — Dental Model Innovation}
+\subsubsection{DentalMIM — Dental Model Innovation}
 
 \begin{description}
   \item[URL] \url{https://github.com/dentalmim/DentalMIM}
@@ -500,6 +500,8 @@ containerizado.
 Após auditar centenas de repositórios odontológicos, identificamos
 padrões que devem acionar alarmes imediatos:
 
+\subsubsection{Sinais estruturais e de autoria}
+
 \begin{enumerate}
   \item \textbf{Repositório sem README ou com README vazio}: indica
     projeto abandonado ou nunca finalizado.
@@ -507,6 +509,17 @@ padrões que devem acionar alarmes imediatos:
   \item \textbf{Autor anônimo ou sem afiliação institucional}: sem
     responsabilidade acadêmica, o código não tem lastro científico.
 
+  \item \textbf{Único commit com todo o código}: \textit{``commit inicial:
+    tudo''} com 50 arquivos sugere que o código foi despejado de uma só
+    vez, sem histórico de desenvolvimento. Impossível auditar a evolução.
+
+  \item \textbf{Issues ignoradas por mais de 6 meses}: comunidade faz
+    perguntas, ninguém responde — projeto efetivamente abandonado.
+\end{enumerate}
+
+\subsubsection{Sinais de conteúdo e reprodutibilidade}
+
+\begin{enumerate}
   \item \textbf{Números ``perfeitos demais''}: acurácia de 99,9\% em
     dataset de 50 imagens é virtualmente impossível e sugere overfitting
     extremo, data leakage ou manipulação.
@@ -518,13 +531,6 @@ padrões que devem acionar alarmes imediatos:
   \item \textbf{Código que só roda no ambiente do autor}: hardcoding de
     paths absolutos (\texttt{C:/Users/Fulano/Documents/dataset/}),
     dependências não listadas, scripts bash específicos de SO.
-
-  \item \textbf{Único commit com todo o código}: \textit{``commit inicial:
-    tudo''} com 50 arquivos sugere que o código foi despejado de uma só
-    vez, sem histórico de desenvolvimento. Impossível auditar a evolução.
-
-  \item \textbf{Issues ignoradas por mais de 6 meses}: comunidade faz
-    perguntas, ninguém responde — projeto efetivamente abandonado.
 \end{enumerate}
 
 \destaque{Se um repositório apresenta 3 ou mais \textit{red flags},

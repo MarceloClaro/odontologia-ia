@@ -88,6 +88,9 @@ O termo ``gêmeo digital'' (\textit{digital twin}) tem sido usado com frequênci
 \subsection{Fusão de Modalidades de Imagem}
 
 O gêmeo digital odontológico começa com a integração de múltiplas modalidades de imagem que capturam diferentes aspectos da anatomia do paciente:
+
+\subsubsection{Modalidades de Aquisição}\indice{CBCT}\indice{scanner intraoral}\indice{fotografia facial 3D}
+
 \begin{itemize}
     \item \textbf{CBCT}: Fornece a anatomia óssea tridimensional (osso alveolar, cortical, trabecular, estruturas nobres: nervos, seios), permitindo avaliar quantidade e qualidade óssea;
     \item \textbf{Scanner intraoral}: Captura com alta precisão ($\sim$20--50 $\mu$m) a superfície dos dentes e tecidos moles (gengiva, palato), essencial para o design protético e análise oclusal;
@@ -100,6 +103,8 @@ A fusão destas modalidades --- tipicamente via algoritmos de registro rígido b
 \subsection{Gholamalizadeh (2023): Segmentação 3D Raiz-Coroa}
 
 Um dos desafios técnicos do gêmeo digital é que o scanner intraoral captura apenas a coroa dentária, enquanto o CBCT revela a raiz, mas com resolução inferior à superfície da coroa. A fusão coroa (scanner) + raiz (CBCT) é essencial para simulações biomecânicas realistas.
+
+\subsubsection{Método de Fusão Coroa-Raiz}\indice{fusão de imagens}\indice{PointNet++}\indice{coroa-raiz}
 
 Gholamalizadeh et al. (2023) propuseram um método baseado em IA que:
 \begin{enumerate}
@@ -117,6 +122,8 @@ O resultado é um modelo dentário 3D que preserva a precisão superficial da co
 O estudo de Ahn et al. (2024) implementou um gêmeo digital completo para planejamento de implantes unitários e múltiplos. O sistema integra:
 
 \citacaoativa{doi-1038-s41598-023-37774-x}{10.1038/s41598-023-37774-x}{O gêmeo digital para implantes integra CBCT, escaneamento intraoral e dados biomecânicos, utilizando modelos de elementos finitos (FEM) acoplados a redes neurais para prever distribuição de estresse ósseo pós-carga. A acurácia de predição de estresse foi de 92\% comparada a dados clínicos reais de 24 meses de acompanhamento. O sistema permite simular múltiplos cenários e selecionar a abordagem com menor risco biomecânico.}
+
+\subsubsection{Fluxo do Gêmeo Digital para Implantes}\indice{gêmeo digital}\indice{Ahn 2024}\indice{simulação FEM}
 
 O fluxo do gêmeo digital para implantes consiste em:
 \begin{enumerate}
@@ -141,6 +148,8 @@ Em uma contribuição conceitualmente inovadora, Natarajan \& Yadalam (2026) pro
     \item Mediadores biológicos (inflamação gengival, expressão de citocinas, atividade osteoclástica);
     \item Desfechos clínicos (perda de inserção, perda óssea, perda dentária).
 \end{itemize}
+
+\subsubsection{Abordagem Causal e Contrafactuais}\indice{CaTGO}\indice{DAG}\indice{simulação contrafactual}
 
 A abordagem causal permite simular intervenções contrafactuais: ``Qual seria a perda óssea em 5 anos se este paciente parasse de fumar hoje?'' ou ``Qual o efeito de intensificar a frequência de manutenção periodontal de 6 para 3 meses?'', questões que modelos puramente associativos não podem responder confiavelmente.
 
@@ -172,7 +181,11 @@ A análise de elementos finitos é a espinha dorsal biomecânica do gêmeo digit
 
 \subsection{IA Acelerando FEM}
 
-O gargalo tradicional do FEM é o tempo computacional: uma simulação mastigatória completa (vários ciclos de carga com diferentes direções e magnitudes) pode levar horas de processamento. A IA oferece duas estratégias de aceleração:
+O gargalo tradicional do FEM é o tempo computacional: uma simulação mastigatória completa (vários ciclos de carga com diferentes direções e magnitudes) pode levar horas de processamento.
+
+\subsubsection{Estratégias de Aceleração}\indice{FEM}\indice{surrogate models}\indice{PINNs}
+
+A IA oferece duas estratégias de aceleração:
 
 \begin{enumerate}
     \item \textbf{Surrogate models}: Uma rede neural é treinada para mimetizar o FEM --- recebe como entrada a geometria do implante e as condições de carga, e prediz o campo de tensões em milissegundos. Treinada com dados de milhares de simulações FEM, a \textit{surrogate network} atinge erro $< 5\%$ com aceleração de $1.000\times$;
@@ -346,7 +359,11 @@ O valor clínico do CaTGO não está apenas na predição, mas na capacidade de 
 
 \subsection{Integração com IoT e Sensores Vestíveis}
 
-A próxima evolução dos gêmeos digitais odontológicos envolve a integração com dispositivos de Internet das Coisas (IoT) e sensores vestíveis que alimentam o modelo com dados contínuos --- não apenas pontuais (consultas). Exemplos incluem:
+A próxima evolução dos gêmeos digitais odontológicos envolve a integração com dispositivos de Internet das Coisas (IoT) e sensores vestíveis que alimentam o modelo com dados contínuos --- não apenas pontuais (consultas).
+
+\subsubsection{Dispositivos Conectados e Sensores}\indice{IoT}\indice{sensores vestíveis}\indice{escovas inteligentes}
+
+Exemplos incluem:
 
 \begin{itemize}
     \item \textbf{Escovas dentárias inteligentes} (Oral-B iO, Philips Sonicare DiamondClean Smart): Sensores de pressão, acelerômetros e giroscópios rastreiam padrões de escovação (duração, cobertura por quadrante, pressão aplicada). Integrados ao gêmeo digital, permitem correlacionar hábitos de higiene oral com desfechos periodontais e de cárie;

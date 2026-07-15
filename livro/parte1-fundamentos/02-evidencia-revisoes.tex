@@ -59,6 +59,8 @@ Ao final deste capítulo, o leitor será capaz de:
 
 \subsection{A Hierarquia de Evidências Científicas}
 
+\subsubsection{Fundamentos da Odontologia Baseada em Evidências}
+
 A odontologia baseada em evidências (OBE) \indice{odontologia baseada em evidências} integra a melhor evidência científica disponível com a expertise clínica do profissional e as preferências do paciente. No contexto da IA odontológica, esta tríade adquire complexidade adicional: a ``expertise clínica'' agora inclui a capacidade de avaliar criticamente algoritmos, e a ``melhor evidência'' frequentemente provém de estudos computacionais cuja metodologia difere substancialmente dos ensaios clínicos randomizados (ECRs) tradicionais.
 
 A pirâmide de evidências clássica organiza os desenhos de estudo em ordem crescente de qualidade:
@@ -70,6 +72,8 @@ A pirâmide de evidências clássica organiza os desenhos de estudo em ordem cre
     \item \textbf{Revisões sistemáticas com metanálise.} Síntese quantitativa de múltiplos ECRs. Nível mais alto de evidência.
     \item \textbf{Umbrella reviews (revisões de revisões).} Síntese de revisões sistemáticas sobre um mesmo tópico.
 \end{enumerate}
+
+\subsubsection{Limitações da Hierarquia para a IA Odontológica}
 
 No entanto, a IA odontológica desafia esta hierarquia tradicional \indice{evidência científica!IA}. A maioria dos estudos de IA diagnóstica não são ECRs — são estudos de acurácia diagnóstica, que ocupam uma posição diferenciada na hierarquia. Além disso, muitos avancos em IA provêm de estudos computacionais que simplesmente não se enquadram nas categorias epidemiológicas clássicas.
 
@@ -136,7 +140,11 @@ A revisão de Khanagar et al. (2021) \cite{ODT-001} é um excelente caso para pr
 
 \subsection{O que é o CLAIM 2024?}
 
+\subsubsection{Origem e Propósito}
+
 O CLAIM 2024 (Checklist for Artificial Intelligence in Medical Imaging) \indice{CLAIM 2024} é o guideline mais diretamente relevante para a odontologia, dado que a maioria das aplicações de IA odontológica envolve imagem (radiografias panorâmicas, periapicais, CBCT, fotos intraorais).
+
+\subsubsection{Os Sete Domínios do Checklist}
 
 Publicado originalmente em 2020 e atualizado em 2024, o CLAIM fornece um checklist de 42 itens específicos para avaliação de estudos de IA em imagem médica. Seus domínios principais são:
 
@@ -165,7 +173,11 @@ Considere um artigo hipotético que reporta 98\% de acurácia na detecção de c
 
 \subsection{Fundamentos do TRIPOD+AI}
 
+\subsubsection{O que é o TRIPOD+AI?}
+
 O TRIPOD+AI \indice{TRIPOD+AI} (Transparent Reporting of a Multivariable Prediction Model for Individual Prognosis or Diagnosis + Artificial Intelligence) é uma extensão do TRIPOD original, desenvolvida especificamente para modelos preditivos baseados em machine learning e deep learning.
+
+\subsubsection{Aplicações em Odontologia}
 
 Modelos preditivos são particularmente relevantes para a odontologia em aplicações como:
 \begin{itemize}
@@ -197,6 +209,8 @@ O TRIPOD+AI exige que tanto a discriminação quanto a calibração sejam report
 
 \subsection{Por que a Performance de Laboratório Não Basta?}
 
+\subsubsection{O Fenômeno do Performance Gap}
+
 O DECIDE-AI \indice{DECIDE-AI} (Developmental and Exploratory Clinical Investigation of Decision-support systems driven by Artificial Intelligence) aborda uma lacuna crítica: a transição da performance em datasets controlados para o desempenho em ambiente clínico real.
 
 Estudos têm demonstrado consistentemente que a acurácia de sistemas de IA cai significativamente quando implementados em cenários clínicos reais. Este fenômeno, conhecido como \textit{performance gap} \indice{performance gap}, resulta de múltiplos fatores:
@@ -207,6 +221,8 @@ Estudos têm demonstrado consistentemente que a acurácia de sistemas de IA cai 
     \item \textbf{Workflow clínico.} A integração do sistema no fluxo de trabalho (tempo de processamento, interface, alertas) afeta como os clínicos utilizam — ou ignoram — as recomendações da IA.
     \item \textbf{Fatores humanos.} Automatism bias (tendência a confiar excessivamente na IA) ou, inversamente, algorithm aversion (rejeição sistemática das recomendações da IA) podem anular os benefícios teóricos da tecnologia.
 \end{enumerate}
+
+\subsubsection{Os Três Estágios de Avaliação Clínica}
 
 O DECIDE-AI fornece um framework para avaliação clínica em três estágios:
 
@@ -365,6 +381,8 @@ Os checklists aqui apresentados fornecem um roteiro estruturado para esta avalia
 
 \subsection{Caso 1: Avaliando uma Metanálise de CNN para Câncer Oral}
 
+\subsubsection{Aplicação do PRISMA 2020}
+
 A metanálise de Kar et al. (2023) \cite{ODT-010} sobre classificação de carcinoma espinocelular oral com CNN é um excelente exemplo de estudo de alta qualidade. Aplicando o PRISMA 2020:
 
 \begin{description}
@@ -375,6 +393,8 @@ A metanálise de Kar et al. (2023) \cite{ODT-010} sobre classificação de carci
     \item[Item 20a (Resultados).] Sensibilidade pooled 94.2\% (IC95\%: 91.3--96.4\%). Especificidade pooled 91.8\% (IC95\%: 88.5--94.2\%). Forest plots com medidas de heterogeneidade. \textbf{Avaliação:} Excelente.
     \item[Item 21 (Viés de publicação).] Funnel plot com teste de Egger ($p = 0.34$ — sem evidência de viés de publicação significativo). \textbf{Avaliação:} Excelente.
 \end{description}
+
+\subsubsection{Veredito}
 
 \textbf{Veredito:} Estudo de alta qualidade, confiável para guiar decisões clínicas sobre o uso de CNNs no diagnóstico de câncer oral.
 

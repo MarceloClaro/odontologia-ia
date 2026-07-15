@@ -38,6 +38,8 @@ A radiografia panorâmica (ortopantomografia) é o exame de triagem mais comum
 na odontologia, capturando maxila, mandíbula, dentes, ATM e seios maxilares
 em uma única imagem com dose efetiva de $\sim$15--25 $\mu$Sv.
 
+\subsubsection{Características para Deep Learning}
+
 \textbf{Características relevantes para DL:}
 \begin{itemize}
   \item \textbf{Resolução típica:} $2400 \times 1200$ a $3000 \times 1500$ pixels
@@ -78,6 +80,8 @@ atingiu AUC 0.93 vs. 0.85 (média de 10 dentistas) na detecção de cáries prox
 
 O CBCT revolucionou o diagnóstico 3D em odontologia com dose significativamente
 menor que a TC médica convencional (30--100 $\mu$Sv vs. 2000+ $\mu$Sv).
+
+\subsubsection{Características do CBCT para Deep Learning}
 
 \begin{itemize}
   \item \textbf{Princípio:} Feixe cônico de raios-X gira em torno do paciente;
@@ -218,7 +222,7 @@ para cáries interproximais, e o DL oferece um ``segundo leitor'' consistente.
 
 \subsection{Arquiteturas Proeminentes}
 
-\subsubsection*{CariesNet~\cite{zhu2022cariesnet} (Zhu et al., 2022)}
+\subsubsection{CariesNet~\cite{zhu2022cariesnet} (Zhu et al., 2022)}
 
 Arquitetura focada em detecção multi-estágio de cáries em radiografias panorâmicas
 com classificação de profundidade (esmalte, dentina, pulpar):
@@ -230,7 +234,7 @@ com classificação de profundidade (esmalte, dentina, pulpar):
   \item \textbf{Métrica:} AUC 0.92 para cárie em esmalte; 0.96 para cárie em dentina
 \end{itemize}
 
-\subsubsection*{DCDNet~\cite{dayi2023dcdnet} (Dayı et al., 2023)}
+\subsubsection{DCDNet~\cite{dayi2023dcdnet} (Dayı et al., 2023)}
 
 Dual-Channel Deep Network para detecção simultânea de cáries proximais e oclusais:
 
@@ -282,6 +286,8 @@ densidade), a IA oferece uma alternativa objetiva e não-invasiva.
 
 \subsection{Estudos Seminais}
 
+\subsubsection{Lee et al. (2024)}
+
 \textbf{Lee et al. (2024):} \citeonline{DL-ODT-002} -- ResNet-50 para classificação
 óssea em panorâmicas:
 \begin{itemize}
@@ -291,6 +297,8 @@ densidade), a IA oferece uma alternativa objetiva e não-invasiva.
   \item Conclusão: panorâmica + DL oferece screening razoável; CBCT permanece
         necessário para planejamento definitivo
 \end{itemize}
+
+\subsubsection{Pornvoranant et al. (2024)}
 
 \textbf{Pornvoranant et al. (2024):} \citeonline{DL-ODT-003} -- Comparação direta
 IA vs. humanos em CBCT:
@@ -320,6 +328,8 @@ IA vs. humanos em CBCT:
 
 \subsection{Detecção de Lesões Periapicais}
 
+\subsubsection{ConvNeXt para Lesões Periapicais}
+
 \textbf{ConvNeXt para lesões periapicais~\cite{liu2024convnext} (Liu et al., 2024):}
 \begin{itemize}
   \item Arquitetura ConvNeXt (modernizada da ResNet com design Swin-inspired)
@@ -328,6 +338,8 @@ IA vs. humanos em CBCT:
   \item Modelo particularmente eficaz para lesões pequenas ($<$ 3 mm) -- onde
         dentistas generalistas têm menor acurácia
 \end{itemize}
+
+\subsubsection{Grad-CAM para Explicabilidade}
 
 \textbf{Grad-CAM para explicabilidade (Kim et al., 2024):}
 \citeonline{DL-ODT-021} aplicou EfficientNet-B4 com Grad-CAM para detecção de
@@ -341,6 +353,8 @@ patologia periapical em 2.100 panorâmicas:
 \end{itemize}
 
 \subsection{Detecção de Restaurações}
+
+\subsubsection{YOLOv5 para Detecção de Restaurações}
 
 \textbf{YOLOv5 para restaurações (Bayrakdar et al., 2024):} \citeonline{DL-ODT-005}
 \begin{itemize}

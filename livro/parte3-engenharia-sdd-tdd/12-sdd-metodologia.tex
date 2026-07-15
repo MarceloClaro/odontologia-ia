@@ -144,10 +144,16 @@ específicos:
 
 \subsection{Segurança clínica como requisito não negociável}
 
+\subsubsection{O paralelo com a aviação civil}
+
 Na aviação civil, o padrão DO-178C exige rastreabilidade completa entre
 requisitos e código para sistemas críticos de voo. Na Odontologia, ainda
 não temos um equivalente regulatório — o que torna ainda \textbf{mais}
 importante que o desenvolvedor adote voluntariamente práticas rigorosas.
+
+\indice{DO-178C} \indice{segurança crítica}
+
+\subsubsection{Comparação de criticidade entre domínios}
 
 A Tabela~\ref{tab:safety-comparison} compara domínios \textit{safety-critical}.
 
@@ -174,6 +180,8 @@ SDD e TDD como autocertificação de qualidade.}
 
 \subsection{Reprodutibilidade como exigência científica}
 
+\subsubsection{A crise de reprodutibilidade na IA odontológica}
+
 A crise de reprodutibilidade na ciência — amplamente documentada por
 \citeonline{baker2016reproducibility} na \textit{Nature} — afeta também
 a IA odontológica. Sem especificações formais, dois grupos de pesquisa
@@ -185,6 +193,8 @@ o que significa ``pré-processar uma radiografia''.
   ``Mais de 70\% dos pesquisadores já tentaram e falharam em reproduzir
   experimentos de outros cientistas, e mais da metade falhou em reproduzir
   seus próprios experimentos.''}
+
+\subsubsection{Como o SDD garante reprodutibilidade}
 
 O SDD resolve isso ao tornar \textbf{explícito} o que estava implícito:
 o contrato de entrada/saída de cada função, os critérios de aceitação
@@ -217,6 +227,8 @@ obrigatórios}:
 
 \subsection{Anatomia de uma boa especificação}
 
+\subsubsection{Exemplo de especificação vaga}
+
 Considere o seguinte exemplo \textbf{ruim} de especificação:
 
 \begin{mdframed}[linecolor=corTesteFalha, linewidth=2pt, backgroundcolor=corTesteFalha!5]
@@ -227,6 +239,8 @@ Considere o seguinte exemplo \textbf{ruim} de especificação:
 Esta especificação falha em todos os quatro componentes: o problema é
 genérico, a entrada não está tipada, a saída é ambígua e não há critério
 verificável.
+
+\subsubsection{Exemplo de especificação precisa}
 
 Agora, a versão \textbf{correta}:
 
@@ -531,6 +545,8 @@ Uma vez registrada, a especificação pode ser recuperada e validada:
 
 \subsection{SpecVerifier: Verificação Automatizada}
 
+\subsubsection{API de verificação programática}
+
 O módulo \texttt{odontoia.sdd.validator} fornece a classe
 \texttt{SpecVerifier}, que executa verificação programática:
 
@@ -543,6 +559,8 @@ O módulo \texttt{odontoia.sdd.validator} fornece a classe
   \item \texttt{summary()} — retorna um resumo de todas as verificações
     realizadas (total, aprovadas, reprovadas, taxa de sucesso).
 \end{itemize}
+
+\subsubsection{Exemplos de verificação}
 
 \teste{Ao executar \texttt{SpecVerifier().verify(detect\_caries\_bitewing)},
 a especificação é validada com sucesso: campos obrigatórios presentes,

@@ -54,6 +54,8 @@ Uma limitação das abordagens puramente imagiológicas é que a periodontite é
 
 \citacaoativa{doi-1007-s00784-024-05678-3}{10.1007/s00784-024-05678-3}{A inclusão de dados demográficos tabulares aumentou a AUC do modelo em 5\% comparado ao uso exclusivo de imagens radiográficas, alcançando AUC final de 0,92 para predição de periodontite. O tabagismo e o diabetes foram os fatores de risco mais impactantes no modelo integrado, com valores SHAP consistentes com a literatura epidemiológica.}
 
+\subsubsection{Vantagens da Abordagem Multimodal}\indice{modelo multimodal}\indice{SHAP}\indice{triagem populacional}
+
 O modelo multimodal oferece três vantagens sobre abordagens puramente radiográficas:
 \begin{enumerate}
     \item \textbf{Maior acurácia}: a combinação de fontes de dados captura dimensões complementares da doença;
@@ -71,7 +73,11 @@ A avaliação radiográfica da perda óssea periodontal é notoriamente subjetiv
 
 A arquitetura U-Net, originalmente desenvolvida para segmentação de estruturas biomédicas, domina as aplicações de detecção de perda óssea periodontal. A revisão de Lee et al. (2024), abrangendo 19 estudos, confirma que modelos baseados em U-Net e Mask R-CNN consistentemente superam métodos tradicionais de processamento de imagem (limiarização, watershed) tanto em acurácia quanto em reprodutibilidade.
 
-O trabalho de Ameli~\cite{ameli2024} (2024) representa o estado da arte na automação da medição de perda óssea. A abordagem combina U-Net para segmentação semântica do osso alveolar (identificando a crista óssea com precisão de pixel) com YOLO-v9 para detecção e contagem de dentes. O pipeline realiza:
+O trabalho de Ameli~\cite{ameli2024} (2024) representa o estado da arte na automação da medição de perda óssea. A abordagem combina U-Net para segmentação semântica do osso alveolar (identificando a crista óssea com precisão de pixel) com YOLO-v9 para detecção e contagem de dentes.
+
+\subsubsection{Pipeline Automatizado para Medição Óssea}\indice{U-Net}\indice{YOLO-v9}\indice{pipeline}
+
+O pipeline realiza:
 \begin{enumerate}
     \item Detecção de cada dente individual com YOLO-v9 (\textit{bounding box} + classe dentária);
     \item Segmentação fina da junção cemento-esmalte e crista óssea com U-Net;
@@ -124,6 +130,8 @@ Idade & 7\% & Interage com perda óssea na razão perda/idade \\
 \subsection{Treinando um Classificador de Risco Periodontal com \texttt{odontoia}}
 
 A biblioteca \texttt{odontoia} oferece uma interface simplificada para treinamento de modelos de risco periodontal. O módulo \texttt{odontoia.models.dental\_ml} encapsula o pipeline completo de pré-processamento, treinamento e avaliação.
+
+\subsubsection{Implementação do Classificador}\indice{classificador de risco}\indice{XGBoost}\indice{SHAP}
 
 \begin{pratica}{Treinamento de Classificador de Risco Periodontal}
 O exemplo abaixo utiliza dados simulados representativos de um estudo clínico transversal com 2.000 pacientes, incluindo profundidade de sondagem média, percentual de sítios com sangramento, índice de placa, tabagismo e HbA1c.
@@ -225,6 +233,8 @@ Os resultados preliminares demonstraram que:
     \item A concordância entre o modelo e a avaliação presencial de periodontistas (kappa 0,81) foi considerada substancial, validando o uso da ferramenta como filtro inicial.
 \end{itemize}
 
+\subsubsection{Impacto na Saúde Pública}\indice{triagem populacional}\indice{saúde pública}\indice{UBS}
+
 Este caso ilustra o potencial da IA para odontologia de saúde pública, onde a demanda por especialistas em periodontia excede em muito a oferta, e a triagem automatizada pode otimizar o encaminhamento de casos prioritários.
 
 \subsection{Caso 2: Monitoramento Longitudinal de Periodontite com Séries Radiográficas}
@@ -294,6 +304,8 @@ Segmentação crista óssea & Dice 0,89--0,92 & Dice 0,91--0,94 & Dice 0,92--0,9
 \subsection{Pipeline Multimodal com Fusão Tardia}
 
 O código abaixo implementa um pipeline completo de fusão tardia (\textit{late fusion}) para classificação de estágios de periodontite, combinando uma CNN (EfficientNet-B4) para extração de features radiográficas com um MLP para dados tabulares, seguindo a metodologia de Costa et al. (2024):
+
+\subsubsection{Código do Pipeline}\indice{pipeline multimodal}\indice{fusão tardia}\indice{EfficientNet}
 
 \begin{lstlisting}[language=Python, caption={Pipeline multimodal para classificação de periodontite com fusão tardia}]
 import torch
@@ -392,6 +404,9 @@ Apesar dos resultados promissores em estudos retrospectivos, a validação prosp
 \subsection{Integração com o Fluxo Clínico}
 
 Para que a IA periodontal tenha impacto clínico real, precisa integrar-se ao fluxo de trabalho do consultório:
+
+\subsubsection{Fluxo de Trabalho com IA Periodontal}\indice{fluxo clínico}\indice{integração}
+
 \begin{enumerate}
     \item O paciente realiza radiografia panorâmica (já é rotina);
     \item A IA processa a imagem em segundos, gerando relatório de perda óssea por dente;

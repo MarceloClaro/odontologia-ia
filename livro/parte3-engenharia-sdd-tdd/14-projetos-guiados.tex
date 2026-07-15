@@ -90,6 +90,8 @@ def test_caries_clinical_metrics():
 
 \subsection{Arquitetura do Modelo}
 
+\subsubsection{Backbone EfficientNet-B3 com transfer learning}
+
 O classificador utiliza \textbf{EfficientNet-B3} como backbone com
 \textit{transfer learning} a partir de pesos pré-treinados no ImageNet.
 A cabeça de classificação consiste em:
@@ -100,6 +102,8 @@ A cabeça de classificação consiste em:
   \item \texttt{Dropout(0.3)} — regularização para prevenir overfitting.
   \item \texttt{Dense(7, Softmax)} — 7 classes ICDAS.
 \end{itemize}
+
+\subsubsection{Hiperparâmetros de treinamento}
 
 \begin{table}[H]
   \centering
@@ -206,6 +210,8 @@ def test_segmentation_dice_threshold():
 
 \subsection{Arquitetura U-Net com Skip Connections}
 
+\subsubsection{Estrutura encoder-decoder}
+
 O segmentador utiliza a arquitetura U-Net clássica \cite{ronneberger2015u},
 com as seguintes características:
 
@@ -217,6 +223,8 @@ com as seguintes características:
     (skip connections) + convolução dupla.
   \item \textbf{Saída}: Convolução 1$\times$1 com 33 filtros + Softmax.
 \end{itemize}
+
+\subsubsection{Hiperparâmetros de treinamento}
 
 \begin{table}[H]
   \centering
@@ -312,6 +320,8 @@ reduzindo a variabilidade interexaminador de 25--40\% para menos de 5\%.
 
 \subsection{Implementação e Resultados}
 
+\subsubsection{Detecção de landmarks e medição calibrada}
+
 O detector utiliza uma abordagem em duas etapas:
 
 \begin{enumerate}
@@ -323,6 +333,8 @@ O detector utiliza uma abordagem em duas etapas:
     DICOM.
 \end{enumerate}
 
+\subsubsection{Resultados clínicos}
+
 \begin{table}[H]
   \centering
   \caption{Resultados do Detector de Perda Óssea (n=200 dentes).}
@@ -331,9 +343,9 @@ O detector utiliza uma abordagem em duas etapas:
     \toprule
     \textbf{Métrica} & \textbf{Valor} & \textbf{Threshold} & \textbf{Status} \\
     \midrule
-    MAE (mm) & 0,42 & $<$ 0,50 & \textcolor{corTesteSucesso}{[ICON] Aprovado} \\
-    Pearson $r$ & 0,967 & $>$ 0,95 & \textcolor{corTesteSucesso}{[ICON] Aprovado} \\
-    Concordância estágio & 88,5\% & $>$ 85\% & \textcolor{corTesteSucesso}{[ICON] Aprovado} \\
+    MAE (mm) & 0,42 & $<$ 0,50 & \textcolor{corTesteSucesso}{Aprovado} \\
+    Pearson $r$ & 0,967 & $>$ 0,95 & \textcolor{corTesteSucesso}{Aprovado} \\
+    Concordância estágio & 88,5\% & $>$ 85\% & \textcolor{corTesteSucesso}{Aprovado} \\
     Tempo de inferência & 320 ms & — & Rápido \\
     \bottomrule
   \end{tabularx}
@@ -386,6 +398,8 @@ intraorais oferece uma ferramenta de triagem acessível e de baixo custo.
 
 \subsection{Implementação e Resultados}
 
+\subsubsection{Adaptações para o domínio odontológico}
+
 O classificador utiliza \textbf{ResNet-50} com \textit{transfer learning}
 e as seguintes adaptações para o domínio odontológico:
 
@@ -398,6 +412,8 @@ e as seguintes adaptações para o domínio odontológico:
   \item \textbf{Balanceamento}: WeightedRandomSampler para compensar
     desbalanceamento natural das classes (saudável é mais frequente).
 \end{itemize}
+
+\subsubsection{Resultados da classificação}
 
 \begin{table}[H]
   \centering

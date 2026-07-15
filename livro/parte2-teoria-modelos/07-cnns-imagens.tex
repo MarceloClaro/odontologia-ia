@@ -246,6 +246,8 @@ camadas) melhora consistentemente a performance, usando apenas convoluções $3\
 
 \subsection{ResNet (2015): Resolvendo o Problema da Profundidade}
 
+\subsubsection{Conexões Residuais}
+
 He et al.~\cite{he2016deep} (Microsoft Research) introduziram as \textbf{conexões residuais}
 (\textit{skip connections}) que permitem treinar redes com mais de 100 camadas:
 
@@ -287,6 +289,8 @@ e $\mathbf{x}$ é a conexão de atalho (\textit{shortcut}) que ``pula'' o bloco.
   \label{fig:residual-block}
 \end{figure}
 
+\subsubsection{Variantes ResNet}
+
 \textbf{Variantes ResNet:}
 \begin{itemize}
   \item \textbf{ResNet-18/34:} Blocos \textit{Basic} (2 convoluções), adequados
@@ -299,6 +303,8 @@ e $\mathbf{x}$ é a conexão de atalho (\textit{shortcut}) que ``pula'' o bloco.
 \end{itemize}
 
 \subsection{EfficientNet (2019): Escalonamento Ótimo}
+
+\subsubsection{Compound Scaling}
 
 Tan \& Le (Google) propuseram o \textbf{compound scaling} --- escalonar
 simultaneamente profundidade ($d$), largura ($w$) e resolução ($r$) da rede
@@ -315,6 +321,8 @@ com um coeficiente composto $\phi$:
 A família EfficientNet-B0 a B7 oferece um espectro de trade-off acurácia $\times$
 eficiência. EfficientNet-B3 e B5 são as variantes mais utilizadas em odontologia
 (\citeonline{ODT-011} reportou AUC 0.94 com EfficientNet-B5 para OPMDs).
+
+\subsubsection{Comparação de Arquiteturas}
 
 \begin{table}[H]
   \centering

@@ -22,7 +22,11 @@ A inteligência artificial, particularmente o deep learning, está transformando
 
 \subsection{De Landmarks Manuais a Redes Neurais}
 
-A detecção automática de pontos cefalométricos é um problema de regressão espacial: dada uma telerradiografia lateral de crânio, prever as coordenadas $(x, y)$ de $N$ landmarks (tipicamente 19--33 pontos). As abordagens de deep learning podem ser categorizadas em três paradigmas:
+A detecção automática de pontos cefalométricos é um problema de regressão espacial: dada uma telerradiografia lateral de crânio, prever as coordenadas $(x, y)$ de $N$ landmarks (tipicamente 19--33 pontos).
+
+\subsubsection{Paradigmas de Detecção Automática}\indice{landmarks cefalométricos}\indice{regressão de coordenadas}\indice{heatmap regression}
+
+As abordagens de deep learning podem ser categorizadas em três paradigmas:
 
 \begin{enumerate}
     \item \textbf{Regressão direta de coordenadas}: A CNN mapeia a imagem diretamente para um vetor de coordenadas $(x_1, y_1, ..., x_N, y_N)$. Simples, mas com precisão limitada ($\sim$2--3 mm de erro médio).
@@ -64,6 +68,8 @@ Consistentemente, três landmarks apresentam erro sistematicamente maior em todo
 \end{itemize}
 
 Estes mesmos landmarks também apresentam a maior variabilidade interexaminador entre ortodontistas humanos, sugerindo que o erro da IA reflete ambiguidade anatômica genuína, não deficiência algorítmica.
+
+\subsubsection{Implicações Clínicas}\indice{intervalos de confiança}\indice{supervisão seletiva}
 
 \destaque{
 \textbf{Implicação prática:} Sistemas de IA cefalométrica devem reportar intervalos de confiança por landmark, não apenas a coordenada pontual. Landmarks com maior incerteza (Pogônio, Ponto B, Gônio) merecem verificação visual pelo ortodontista, enquanto landmarks de alta confiança (Sela, Násio, Espinha Nasal Anterior) podem ser aceitos sem revisão. Esta abordagem de ``IA com supervisão seletiva'' otimiza o tempo clínico.
@@ -113,7 +119,11 @@ A IA está transformando o \textit{staging} --- a etapa de planejar a sequência
 
 \subsection{Wang (2024): Dataset 3D Pré/Pós-Tratamento}
 
-O estudo de Wang et al. (2024) representa um avanço significativo ao disponibilizar um dataset público de modelos 3D dentários pré e pós-tratamento ortodôntico, com anotações detalhadas de movimentação dentária. O dataset contém 500 pares de escaneamentos intraorais (pré e pós) com:
+O estudo de Wang et al. (2024) representa um avanço significativo ao disponibilizar um dataset público de modelos 3D dentários pré e pós-tratamento ortodôntico, com anotações detalhadas de movimentação dentária.
+
+\subsubsection{Características do Dataset}\indice{Wang 2024}\indice{dataset público}\indice{escaneamento intraoral}
+
+O dataset contém 500 pares de escaneamentos intraorais (pré e pós) com:
 \begin{itemize}
     \item Segmentação individual de cada dente (32 dentes por arcada);
     \item Vetores de movimentação 3D (translação $\Delta x, \Delta y, \Delta z$ e rotação $\Delta\theta_{x}, \Delta\theta_{y}, \Delta\theta_{z}$);
@@ -249,6 +259,8 @@ Confiabilidade dos landmarks:
 
 Em um programa de triagem ortodôntica escolar conduzido em parceria entre a Faculdade de Odontologia da Universidade de São Paulo (FOUSP) e a Secretaria Municipal de Educação, 2.400 crianças de 8--12 anos foram submetidas a telerradiografias laterais processadas pelo sistema de cefalometria automática do \texttt{odontoia} (Transformer-based, Ahn et al., 2024).
 
+\subsubsection{Fluxo de Triagem Automatizada}\indice{triagem escolar}\indice{má oclusão}\indice{prioridade clínica}
+
 O fluxo automatizado funcionava da seguinte forma:
 \begin{enumerate}
     \item Telerradiografia lateral capturada na própria escola (equipamento portátil);
@@ -263,6 +275,8 @@ O fluxo automatizado funcionava da seguinte forma:
     \item Relatório automatizado enviado aos pais com explicações em linguagem acessível e QR code para agendamento.
 \end{enumerate}
 
+\subsubsection{Resultados da Triagem}\indice{resultados clínicos}\indice{custo por paciente}
+
 Os resultados demonstraram que:
 \begin{itemize}
     \item A IA classificou corretamente 94,2\% das crianças em comparação com a avaliação presencial de dois ortodontistas (padrão-ouro consensual);
@@ -275,7 +289,11 @@ Os resultados demonstraram que:
 
 Paciente do sexo feminino, 24 anos, Classe I de Angle com biprotrusão maxilar e mandibular, apinhamento anteroinferior moderado (4,5 mm de discrepância), perfil facial convexo (ângulo nasolabial de 82\textdegree{}), incisivos superiores vestibularizados (1-NA = 28\textdegree{} e 7,2 mm).
 
-A decisão entre extrair ou não os primeiros pré-molares era limítrofe: três ortodontistas consultados divergiram (2 a favor da extração, 1 contra). O modelo de IA para decisão de extração (Ferreira et al., 2024) foi então consultado. O modelo --- um ensemble de ResNet-50 (imagem cefalométrica) + XGBoost (medidas cefalométricas e dados clínicos) --- atribuiu probabilidade de 91\% à decisão ``extrair'', com as seguintes justificativas SHAP:
+A decisão entre extrair ou não os primeiros pré-molares era limítrofe: três ortodontistas consultados divergiram (2 a favor da extração, 1 contra). O modelo de IA para decisão de extração (Ferreira et al., 2024) foi então consultado.
+
+\subsubsection{Análise do Modelo de IA}\indice{decisão de extração}\indice{SHAP}\indice{caso limítrofe}
+
+O modelo --- um ensemble de ResNet-50 (imagem cefalométrica) + XGBoost (medidas cefalométricas e dados clínicos) --- atribuiu probabilidade de 91\% à decisão ``extrair'', com as seguintes justificativas SHAP:
 
 \begin{itemize}
     \item Discrepância dento-alveolar (4,5 mm): fator de maior peso para extração (SHAP +0,38);
@@ -289,6 +307,8 @@ Com base na recomendação da IA, o tratamento com extração dos quatro primeir
 \subsection{Caso 3: Predição de Duração de Tratamento com Alinhadores}
 
 Uma das principais fontes de insatisfação em tratamentos com alinhadores transparentes é a discrepância entre a duração prevista e a duração real --- pacientes frequentemente necessitam de refinamentos que estendem o tratamento além do inicialmente estimado. Wang et al. (2024) treinaram um modelo de \textit{graph neural network} (GNN) que, a partir do escaneamento intraoral inicial e do \textit{setup} virtual proposto, prediz a duração real do tratamento (incluindo refinamentos) com erro médio de $\pm 1,8$ alinhadores (aproximadamente $\pm 2,5$ meses para trocas quinzenais).
+
+\subsubsection{Resultados da Predição}\indice{GNN}\indice{alinhadores}\indice{duração do tratamento}
 
 Em uma série de 150 casos tratados com alinhadores, o modelo GNN:
 \begin{itemize}

@@ -59,6 +59,8 @@ Osso alveolar (crista) & Dice 0,74 & Dice 0,90 & Crista óssea é ambígua para 
 \end{tabular}
 \end{table}
 
+\subsubsection{Vantagens do SAM em Odontologia}\indice{SAM}\indice{zero-shot}\indice{fine-tuning}
+
 O SAM em \textit{zero-shot} tem desempenho inferior à U-Net treinada especificamente para cada tarefa. Entretanto, o SAM oferece vantagens cruciais:
 \begin{enumerate}
     \item \textbf{Não requer dados de treinamento anotados}: Pode ser usado imediatamente em qualquer clínica, sem necessidade de datasets rotulados;
@@ -171,6 +173,8 @@ Uma revisão abrangente publicada no arXiv em 2026 mapeou o estado da arte dos g
 
 \textit{Alucinação} (\textit{hallucination}) é o termo técnico para a geração, por LLMs, de informações plausíveis mas factualmente incorretas. Em odontologia, as consequências podem ser graves: um LLM que ``alucina'' uma interação medicamentosa inexistente, contraindica erroneamente um procedimento ou sugere um tratamento obsoleto pode causar dano ao paciente.
 
+\subsubsection{Exemplos de Alucinação Odontológica}\indice{alucinação}\indice{LLM}\indice{segurança do paciente}
+
 \destaque{
 \textbf{Exemplos de alucinação em contexto odontológico:}
 \begin{itemize}
@@ -281,6 +285,8 @@ Quem é responsável quando um LLM gera uma recomendação clínica incorreta qu
 
 Paciente de 17 anos com terceiro molar inferior esquerdo (dente 38) impactado em posição mesioangular, Classe II de Pell \& Gregory, com íntima relação com o nervo alveolar inferior (NAI). O planejamento cirúrgico demandava segmentação precisa do dente impactado e do trajeto do NAI para avaliar o risco de lesão nervosa --- uma tarefa que tipicamente consome 20--30 minutos de segmentação manual em software de planejamento.
 
+\subsubsection{Resultados da Segmentação}\indice{MedSAM}\indice{few-shot}\indice{dente impactado}
+
 Utilizando o MedSAM (Ma et al., 2024) --- versão do SAM com fine-tuning em imagens médicas --- com \textit{few-shot fine-tuning} de apenas 15 exemplos de dentes impactados, o sistema atingiu:
 \begin{itemize}
     \item Segmentação do dente 38: Dice 0,94 (vs. 0,91 para nnU-Net treinada com 150 exemplos);
@@ -294,6 +300,8 @@ Utilizando o MedSAM (Ma et al., 2024) --- versão do SAM com fine-tuning em imag
 \subsection{Caso 2: DentalGPT para Documentação e Suporte Clínico}
 
 Em um estudo prospectivo conduzido em uma clínica-escola de odontologia, o DentalGPT --- modelo LLaMA-2-7B com fine-tuning em 50.000 pares pergunta-resposta odontológicos (Zolfaghari et al., 2024) --- foi integrado ao sistema de prontuário eletrônico para auxiliar na documentação clínica e suporte à decisão.
+
+\subsubsection{Resultados da Implementação}\indice{DentalGPT}\indice{documentação clínica}\indice{suporte à decisão}
 
 Durante 3 meses, 12 alunos de graduação (7º--8º semestres) utilizaram o DentalGPT como assistente em 840 atendimentos. Os resultados demonstraram:
 
@@ -315,6 +323,8 @@ Em um programa de teleodontologia para unidades básicas de saúde no Nordeste b
     \item O BiomedCLIP realizava classificação zero-shot (sem nenhum treinamento adicional) em três categorias: ``provavelmente benigno'', ``requer avaliação presencial'' e ``suspeito para malignidade'';
     \item Casos classificados como suspeitos eram encaminhados prioritariamente para biópsia por estomatologista.
 \end{enumerate}
+
+\subsubsection{Resultados da Triagem}\indice{BiomedCLIP}\indice{teleodontologia}\indice{lesões orais}
 
 Em 2.800 pacientes triados ao longo de 12 meses:
 \begin{itemize}

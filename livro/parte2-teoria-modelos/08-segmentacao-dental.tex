@@ -592,6 +592,8 @@ híbridas que representam o estado da arte.
 
 \subsection{3D U-Net e V-Net}
 
+\subsubsection{3D U-Net}
+
 A extensão natural da U-Net para volumes 3D substitui todas as convoluções 2D
 ($3 \times 3$) por convoluções 3D ($3 \times 3 \times 3$) e max pooling 2D
 por max pooling 3D:
@@ -604,6 +606,8 @@ por max pooling 3D:
 O custo computacional cresce cubicamente: uma U-Net 3D com entrada $128^3$ tem
 $\sim$19M de parâmetros vs. $\sim$7M da equivalente 2D, e requer $\sim$8$\times$
 mais memória de GPU.
+
+\subsubsection{V-Net}
 
 \textbf{V-Net}~\cite{milletari2016vnet} (Milletari et al., 2016) introduz:
 \begin{itemize}
@@ -657,6 +661,8 @@ o dilema entre custo computacional (3D puro é caro) e perda de contexto espacia
 
 \subsection{DE-KAN: Kolmogorov-Arnold Networks}
 
+\subsubsection{Fundamento Teórico das KANs}
+
 \citeonline{DL-ODT-008} (Mustakim et al., 2025) introduziram uma arquitetura
 inovadora que substitui as MLPs tradicionais por \textbf{KANs} no bottleneck
 da U-Net:
@@ -678,6 +684,8 @@ Kolmogorov-Arnold.
   \item Interpretabilidade: funções $\phi_{i,j}$ podem ser visualizadas e
         analisadas (diferentemente dos pesos de uma MLP)
 \end{itemize}
+
+\subsubsection{Arquitetura DE-KAN}
 
 \textbf{DE-KAN (\textit{Dual Encoder KAN}):} Combina dois encoders (ResNet-18
 para imagens aumentadas + CNN customizada para originais) com fusão via KAN

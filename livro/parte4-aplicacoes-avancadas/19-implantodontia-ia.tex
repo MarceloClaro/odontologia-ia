@@ -38,6 +38,8 @@ O estudo de Pornvoranant (2024) comparou diretamente modelos de deep learning co
 
 Os resultados foram notáveis: a CNN alcançou acurácia de classificação de 91,3\% (kappa de Cohen 0,88), comparável ao desempenho interexaminador de especialistas (kappa 0,85). Quando comparada a implantologistas com $< 5$ anos de experiência, a CNN superou-os significativamente (acurácia 91,3\% vs. 78,5\%, $p < 0,001$). A maior discordância CNN--humano ocorreu na distinção entre tipos II e III (ambos com osso trabecular intermediário).
 
+\subsubsection{Principais Achados}\indice{ResNeXt-101}\indice{classificação óssea}\indice{implantologistas}
+
 \destaque{
 \textbf{Pornvoranant (2024) --- Principais Achados:}
 \begin{itemize}
@@ -79,6 +81,9 @@ O estudo de Silva et al. (2023) implementou um pipeline completo de radiomics pa
 \citacaoativa{doi-3389-froh-2026-1895266}{10.3389/froh.2026.1895266}{Utilizando 1.500 features radiômicas extraídas do osso alveolar em CBCT pré-operatórios de 850 implantes com acompanhamento de 12 meses, o modelo XGBoost atingiu AUC de 0,91 para predição de sucesso de osseointegração. As features mais preditivas foram energia (textura, refletindo homogeneidade óssea) e skewness do histograma de densidade (refletindo assimetria na distribuição de densidade mineral). O modelo radiômico superou significativamente modelos baseados apenas em parâmetros clínicos como densidade óssea média subjetiva.}
 
 O pipeline radiômico segue etapas padronizadas pelo \textit{Image Biomarker Standardisation Initiative} (IBSI):
+
+\subsubsection{Etapas do Pipeline Radiômico}\indice{radiomics}\indice{IBSI}\indice{extração de features}
+
 \begin{enumerate}
     \item \textbf{Aquisição}: CBCT com protocolo padronizado (FOV, voxel, kVp, mA);
     \item \textbf{Segmentação da ROI}: delimitação do volume ósseo peri-implantar (3--5 mm ao redor do sítio);
@@ -109,6 +114,8 @@ O sistema de Song et al. (2024) representa um avanço significativo rumo ao plan
 \label{fig:planejamento-auto-implante}
 \end{figure}
 
+\subsubsection{Preservação de Estruturas Nobres}\indice{nervo alveolar}\indice{segurança anatômica}\indice{planejamento automático}
+
 A preservação de estruturas nobres é o ponto forte do sistema automático: enquanto planejadores humanos ocasionalmente posicionam implantes muito próximos ao nervo alveolar (especialmente em mandíbulas atróficas, onde o nervo pode estar superficializado), o sistema baseado em restrições garante \textit{standoff} mínimo de 2 mm (ou 1,5 mm com margem de segurança configurável) em 98\% dos casos.
 
 \subsection{Framework Integrado: Segmentação + Predição de Área Edêntula}
@@ -121,7 +128,11 @@ Kim et al. (2023) propuseram um \textit{framework} mais ambicioso que combina se
 
 \subsection{Guia Cirúrgico: Da IA ao Procedimento}
 
-O guia cirúrgico é a ponte entre o planejamento digital e a execução clínica. O fluxo típico integra:
+O guia cirúrgico é a ponte entre o planejamento digital e a execução clínica.
+
+\subsubsection{Etapas do Fluxo Cirúrgico}\indice{guia cirúrgico}\indice{planejamento digital}\indice{cirurgia guiada}
+
+O fluxo típico integra:
 \begin{enumerate}
     \item \textbf{Planejamento IA}: O modelo sugere posição(ões) ótima(s) do(s) implante(s);
     \item \textbf{Aprovação do clínico}: O implantologista revisa e ajusta o plano (papel de supervisor, não substituído);
@@ -211,6 +222,8 @@ Top features:
 
 Paciente do sexo feminino, 58 anos, com ausência dos dentes 16 e 17 (primeiro e segundo molares superiores direitos) há 8 anos. CBCT revelou pneumatização severa do seio maxilar direito, com altura óssea residual subantral de apenas 3,2 mm na região do dente 16 e 2,8 mm no dente 17 --- insuficiente para instalação de implantes convencionais sem levantamento de seio.
 
+\subsubsection{Cenários de Tratamento Simulados}\indice{planejamento automático}\indice{simulação FEM}\indice{implante zigomático}
+
 O sistema de planejamento automático de Song et al. (2024) foi utilizado para avaliar três cenários:
 \begin{enumerate}
     \item \textbf{Cenário A}: Levantamento de seio bilateral (janela lateral) + 2 implantes $4,1 \times 8$ mm após 6 meses de cicatrização;
@@ -224,12 +237,18 @@ A simulação FEM com IA predisse os seguintes riscos de sobrecarga em 5 anos: C
 
 \subsection{Caso 2: Detecção Precoce de Peri-implantite com CNN}
 
-Uma coorte prospectiva de 180 pacientes com 420 implantes (todos com pelo menos 3 anos de função) foi submetida a monitoramento radiográfico anual com uma CNN treinada para detecção de peri-implantite (Silva et al., 2024). O protocolo consistia em:
+Uma coorte prospectiva de 180 pacientes com 420 implantes (todos com pelo menos 3 anos de função) foi submetida a monitoramento radiográfico anual com uma CNN treinada para detecção de peri-implantite (Silva et al., 2024).
+
+\subsubsection{Protocolo de Monitoramento}\indice{peri-implantite}\indice{CNN}\indice{monitoramento radiográfico}
+
+O protocolo consistia em:
 \begin{itemize}
     \item Radiografia periapical padronizada (técnica do paralelismo) a cada 12 meses;
     \item Processamento pela CNN (ResNet-50 fine-tuned) que classificava cada implante como: saudável, mucosite peri-implantar, ou peri-implantite (leve, moderada, severa);
     \item Confirmação clínica por periodontista cego ao resultado da CNN.
 \end{itemize}
+
+\subsubsection{Resultados do Monitoramento}\indice{detecção precoce}\indice{intervenção não-cirúrgica}
 
 Em 24 meses de acompanhamento, a CNN:
 \begin{itemize}
@@ -402,7 +421,11 @@ Predicao de Osseointegracao (12 meses):
 
 \subsection{Validação Multicêntrica e Generalização}
 
-O principal desafio da IA em implantodontia é a generalização entre diferentes scanners CBCT, protocolos de aquisição e populações. Um modelo treinado em imagens de um centro com equipamento específico pode degradar significativamente em outro centro. Soluções promissoras incluem:
+O principal desafio da IA em implantodontia é a generalização entre diferentes scanners CBCT, protocolos de aquisição e populações. Um modelo treinado em imagens de um centro com equipamento específico pode degradar significativamente em outro centro.
+
+\subsubsection{Estratégias de Generalização}\indice{domain adaptation}\indice{federated learning}\indice{IBSI}
+
+Soluções promissoras incluem:
 \begin{itemize}
     \item \textbf{\textit{Domain adaptation}}: Técnicas que adaptam o modelo a novos domínios com poucos ou nenhum dado anotado;
     \item \textbf{\textit{Federated learning}}: Treinamento distribuído que preserva a privacidade dos dados;
@@ -411,7 +434,11 @@ O principal desafio da IA em implantodontia é a generalização entre diferente
 
 \subsection{Integração com Sistemas de Navegação Dinâmica}
 
-A navegação cirúrgica dinâmica --- que rastreia a posição da broca em tempo real relativa ao CBCT --- é a fronteira seguinte. A integração com IA permitiria:
+A navegação cirúrgica dinâmica --- que rastreia a posição da broca em tempo real relativa ao CBCT --- é a fronteira seguinte.
+
+\subsubsection{Navegação em Tempo Real}\indice{navegação dinâmica}\indice{feedback háptico}
+
+A integração com IA permitiria:
 \begin{itemize}
     \item Ajuste em tempo real da posição do implante baseado em \textit{feedback} háptico;
     \item Alertas de proximidade a estruturas nobres;

@@ -70,9 +70,13 @@ Ao final deste capítulo, o leitor será capaz de:
 
 \subsection{A Pré-História: Computadores Chegam à Odontologia (1960--1990)}
 
+\subsubsection{Primeiros Experimentos Computacionais (1960--1980)}
+
 \capitular{0}{A}{história} da inteligência artificial na odontologia não começa com redes neurais, mas com a simples digitalização do consultório odontológico. Na década de 1960, os primeiros mainframes começaram a ser utilizados para gerenciamento administrativo de clínicas e escolas de odontologia — agendamento de pacientes, controle de estoque e faturamento. Eram sistemas puramente organizacionais, sem qualquer ambição diagnóstica, mas estabeleceram a infraestrutura conceitual sobre a qual, décadas depois, a IA odontológica seria construída \indice{informática odontológica!história}.
 
 A década de 1970 testemunhou os primeiros experimentos de diagnóstico computadorizado. Em 1973, pesquisadores da Universidade de Michigan desenvolveram um sistema de análise de modelos de estudo ortodônticos usando computação gráfica primitiva. Embora rudimentar pelos padrões atuais — processando imagens com resolução de $64 \times 64$ pixels em preto e branco —, este trabalho estabeleceu um princípio que permanece válido: computadores podem extrair informações clinicamente relevantes de imagens odontológicas.\notalateral{Para comparar: hoje um único exame de CBCT gera milhões de \emph{voxels} — a matéria-prima que o \emph{deep learning} aprende a interpretar.}
+
+\subsubsection{A Emergência dos Sistemas Especialistas (1980--1990)}
 
 Os anos 1980 foram a década dourada dos sistemas especialistas \indice{sistemas especialistas}. Inspirados pelo sucesso do MYCIN (Stanford, 1976) na medicina — um sistema baseado em regras que diagnosticava infecções bacterianas com acurácia superior a médicos juniores —, pesquisadores odontológicos começaram a codificar o conhecimento clínico em bases de regras formais. O raciocínio era simples, porém poderoso: se especialistas humanos tomam decisões seguindo regras (se $X$ então $Y$), então computadores programados com essas mesmas regras poderiam replicar o raciocínio clínico.
 
@@ -87,6 +91,8 @@ O sistema de Hammond, Davenport e Fitzpatrick (1993) representa o ápice da era 
 \citacaoativa{doi-1016-0933-3657-93-90035-2}{10.1016/0933-3657(93)90035-2}{Utilizamos restrições de integridade lógica para representar o conhecimento protético — incluindo princípios de reciprocidade, retenção indireta e estabilidade — e demonstramos que um sistema computacional pode gerar designs de PPR que satisfazem simultaneamente todos os requisitos mecânicos e biológicos.}
 
 A importância deste trabalho transcende a prótese:\citdoi{doi-1016-0933-3657-93-90035-2}{10.1016/0933-3657(93)90035-2} ele demonstrou que o conhecimento odontológico — frequentemente descrito como uma ``arte'' intuitiva — poderia ser formalizado em regras lógicas precisas e executáveis por computador. Esta é uma lição que permanece relevante na era do deep learning: a qualidade do conhecimento de domínio codificado determina o valor clínico do sistema.
+
+\subsubsection{Limitações dos Sistemas Especialistas}
 
 Entretanto, os sistemas especialistas tinham limitações fundamentais que Stheeman, van der Stelt e Mileman (1992) documentaram em sua revisão crítica \cite{ODT-008}:
 
@@ -106,6 +112,8 @@ O ano de 1998 marca uma inflexão histórica com a publicação do artigo de Bri
 \citacaoativa{doi-1016-s0300-5712-97-00027-4}{10.1016/s0300-5712(97)00027-4}{Redes neurais artificiais podem ser treinadas apenas com dados clínicos para reproduzir decisões complexas de tratamento de terceiros molares, superando a limitação fundamental dos sistemas especialistas — a necessidade de extração e codificação manual de regras.}
 
 O estudo foi metodologicamente simples para os padrões atuais: uma rede \textit{feedforward} com uma camada oculta, treinada com 200 casos clínicos. Mas seu impacto conceitual foi revolucionário. Brickley demonstrou que uma rede neural poderia aprender a relação entre sinais clínicos (profundidade de inclusão, angulação, proximidade ao nervo alveolar inferior) e a decisão de tratamento (exodontia vs. preservação) sem que nenhuma regra fosse explicitamente programada. A rede ``descobriu'' padrões nos dados.
+
+\subsubsection{A Fundação da Informática Odontológica}
 
 Paralelamente ao desenvolvimento de redes neurais, um movimento igualmente importante estava se consolidando: a fundação da informática odontológica como disciplina científica. Titus Schleyer, na Universidade de Pittsburgh, publicou uma série de artigos que definiram o campo \cite{ODT-004, ODT-007}.
 
@@ -144,6 +152,8 @@ González Herrera, Murguia Martínez e Andrade Santos (2025) \cite{ODT-005} cond
 
 \citacaoativa{doi-62486-aid202525}{10.62486/aid202525}{A análise de co-ocorrência de palavras-chave revela três fases evolutivas distintas: (1) experimentação institucional com sistemas baseados em regras, (2) desenvolvimento de sistemas especializados para domínios clínicos específicos, e (3) validação clínica com foco em métricas de performance e generalização. A transição conceitual de `sistemas' e `regras' para `validação' e `performance clínica' reflete a maturação do campo de uma disciplina experimental para uma ciência aplicada.}
 
+\subsubsection{As Três Fases Evolutivas}
+
 O estudo identificou três fases:
 
 \begin{description}
@@ -158,9 +168,13 @@ Uma lacuna significativa identificada por González Herrera et al. (2025) é a e
 
 \subsection{Khanagar et al. (2021): A Revisão que Sintetizou Duas Décadas}
 
+\subsubsection{Contexto e Metodologia}
+
 A revisão sistemática de Khanagar et al. (2021) \cite{ODT-001}, publicada no \textit{Journal of Dental Sciences}, é o artigo mais citado sobre IA odontológica e serve como referência central para qualquer estudo do campo. Após criteriosa seleção em oito bases de dados (PubMed, Medline, Embase, Cochrane, Google Scholar, Scopus, Web of Science e IEEE Xplore), 43 artigos foram incluídos na síntese qualitativa.
 
 \citacaoativa{doi-1016-j-jds-2020-06-019}{10.1016/j.jds.2020.06.019}{A revisão sistemática de 43 artigos, cobrindo duas décadas de aplicações de IA na odontologia (2000-2020), documenta a transição de sistemas especialistas baseados em regras para redes neurais e deep learning. A avaliação de qualidade metodológica (QUADAS-2) revelou que 67\% dos estudos apresentavam risco de viés moderado a alto, destacando a necessidade de padronização metodológica no campo.}
+
+\subsubsection{Principais Achados}
 
 Os principais achados de Khanagar et al. incluem:
 
@@ -209,9 +223,13 @@ A Tabela~\ref{tab:linha-tempo-ia} apresenta a cronologia completa dos marcos da 
 
 \subsection{Da Radiografia Analógica ao Diagnóstico por IA: 50 Anos de Evolução}
 
+\subsubsection{Testemunhas da Evolução Tecnológica}
+
 Van der Stelt, Farman, McDavid e Sanderink (2021) \cite{ODT-063} publicaram uma revisão histórica única — escrita por pesquisadores que testemunharam e protagonizaram a evolução da radiologia odontológica ao longo de cinco décadas.
 
 \citacaoativa{doi-1259-dmfr-20200425}{10.1259/dmfr.20200425}{Cinquenta anos de mudanças tecnológicas na radiologia odontológica e maxilofacial testemunharam a transição da radiografia analógica ao digital, do CBCT ao deep learning. Os pioneiros — Welander com o Sens-A-Ray, Mouyen com o CDR Trophy — estabeleceram as fundações sobre as quais a IA diagnóstica atual é construída. Cada avanço em hardware de captura viabilizou novos algoritmos de processamento, e cada algoritmo de processamento demandou hardware mais avançado — um ciclo virtuoso que culmina na era da IA.}
+
+\subsubsection{Marcos da Radiologia Digital}
 
 A evolução tecnológica descrita por van der Stelt et al. inclui marcos como:
 
@@ -351,9 +369,13 @@ A análise bibliométrica de González Herrera et al. (2025) fornece validação
 
 \subsection{O Impacto da ImageNet e do Transfer Learning (2012--2018)}
 
+\subsubsection{A Revolução da ImageNet}
+
 O ano de 2012 é frequentemente citado como o ``momento ImageNet'' da inteligência artificial — quando AlexNet, uma rede neural convolucional profunda treinada em GPUs, venceu o desafio ImageNet Large Scale Visual Recognition Challenge (ILSVRC) por uma margem esmagadora (taxa de erro de 15.3\% contra 26.2\% do segundo colocado). Este evento catalisou uma revolução que, em menos de cinco anos, transformaria o diagnóstico odontológico.
 
 Para a odontologia, o verdadeiro divisor de águas não foi a AlexNet em si, mas o conceito de \textbf{transfer learning} que ela viabilizou. Modelos pré-treinados em ImageNet (1.2 milhão de imagens naturais) aprenderam representações visuais genéricas — detecção de bordas, texturas, formas — que se mostraram notavelmente transferíveis para imagens médicas e odontológicas.
+
+\subsubsection{Evidências em Odontologia}
 
 Lin et al. (2024) \cite{ODT-026} demonstraram este princípio de forma convincente: uma ResNet-50 pré-treinada em ImageNet, com fine-tuning das últimas três camadas em apenas 500 radiografias odontológicas, atingiu acurácia de 93.5\% na detecção de câncer oral — performance comparável à de redes treinadas do zero com dez vezes mais dados.
 
@@ -450,7 +472,7 @@ O conceito de gêmeo digital odontológico — uma réplica virtual dinâmica do
 \end{enumerate}
 
 %==================================================================
-% 🎭 ELEMENTOS DE IMERSÃO — Livro Imersão (SPEC-951-R200)
+%  ELEMENTOS DE IMERSÃO — Livro Imersão (SPEC-951-R200)
 %==================================================================
 
 % --- Momento Narrativo: Dra. Marina descobre a IA ---
@@ -477,11 +499,11 @@ O conceito de gêmeo digital odontológico — uma réplica virtual dinâmica do
 
 % --- Badge Alert ---
 \badgealert{Curioso Digital}{
-  🎯 Complete a primeira prática do Capítulo 3 para desbloquear este badge!
+   Complete a primeira prática do Capítulo 3 para desbloquear este badge!
   
   \textbf{Requisito:} Rodar \texttt{print('Olá, Odontologia + IA!')} no Google Colab
   
-  \textbf{Recompensa:} +100 XP | 🏅 Badge exclusivo
+  \textbf{Recompensa:} +100 XP |  Badge exclusivo
 }
 
 % --- Desafio ---
@@ -509,7 +531,7 @@ O conceito de gêmeo digital odontológico — uma réplica virtual dinâmica do
     \item \textbf{Progresso no livro:} 1/28 capítulos (3,6\%)
   \end{itemize}
   
-  \textbf{📱 Escaneie o QR code deste capítulo para acessar o 
+  \textbf{ Escaneie o QR code deste capítulo para acessar o 
   vídeo de revisão e o notebook Colab.}
 }
 

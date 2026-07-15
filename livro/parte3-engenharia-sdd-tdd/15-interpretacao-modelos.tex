@@ -20,6 +20,8 @@ de modelos de IA.
 
 \subsection{Por que modelos opacos são inaceitáveis na saúde}
 
+\subsubsection{Shortcut learning em IA odontológica}
+
 Em 2021, um estudo amplamente divulgado revelou que um sistema de IA
 para detecção de COVID-19 em radiografias torácicas havia aprendido a
 identificar o \textbf{formato da fonte} usada nos metadados DICOM dos
@@ -43,7 +45,7 @@ potencialmente enganoso. Com XAI, você vê exatamente onde o modelo está
 olhando e pode validar se a atenção coincide com o raciocínio clínico
 esperado.}
 
-\subsection{Requisitos regulatórios emergentes}
+\subsubsection{Requisitos regulatórios emergentes}
 
 O FDA americano e a EMA europeia já exigem explicabilidade para
 \textit{SaMD} (Software as Medical Device) de classe II e III. O
@@ -95,6 +97,8 @@ encapsula todo o pipeline de Grad-CAM para uso odontológico:
 
 \subsection{Interpretação Clínica do Grad-CAM}
 
+\subsubsection{Padrões de ativação esperados}
+
 A interpretação correta de um mapa Grad-CAM requer conhecimento clínico:
 
 \begin{itemize}
@@ -102,6 +106,11 @@ A interpretação correta de um mapa Grad-CAM requer conhecimento clínico:
     de cáries — o modelo está ``olhando'' onde as cáries ocorrem.
   \item \textbf{Ativação na coroa do dente}: pode indicar que o modelo
     aprendeu a identificar restaurações (amálgama, resina) em vez de cáries.
+\end{itemize}
+
+\subsubsection{Padrões de ativação problemáticos}
+
+\begin{itemize}
   \item \textbf{Ativação difusa, sem foco}: sugere que o modelo não
     aprendeu características discriminativas — possível overfitting ou
     dados insuficientes.
@@ -183,6 +192,8 @@ de consistência e é globalmente interpretável.
 
 \subsection{SHAP para Dados Periodontais Tabulares}
 
+\subsubsection{Features mais relevantes por estágio}
+
 Considere o dataset periodontal sintético com 10 features. Usando SHAP,
 podemos responder perguntas clinicamente relevantes:
 
@@ -193,6 +204,11 @@ podemos responder perguntas clinicamente relevantes:
   \item \textbf{O modelo está usando features apropriadas?} Se ``idade''
     fosse a feature mais importante, isso seria um sinal de viés — a idade
     é fator de risco, não critério diagnóstico.
+\end{itemize}
+
+\subsubsection{Auditoria de viés com SHAP}
+
+\begin{itemize}
   \item \textbf{Existe viés racial ou socioeconômico?} Se features como
     ``CEP'' ou ``tipo de convênio'' (se presentes) tivessem alto SHAP,
     isso indicaria viés inaceitável.
@@ -377,6 +393,8 @@ clínicas.
 
 \subsection{Integrated Gradients para Radiografias}
 
+\subsubsection{Conceito e fundamentos matemáticos}
+
 Enquanto Grad-CAM depende da arquitetura da CNN (requer camadas
 convolucionais), o \textit{Integrated Gradients} \cite{sundararajan2017axiomatic}
 é um método de atribuição axiomático que funciona com qualquer modelo
@@ -389,6 +407,8 @@ gradientes ao longo de um caminho linear entre uma imagem de referência
   \frac{\partial F(x' + \alpha(x - x'))}{\partial x_{i}} d\alpha
   \label{eq:integrated-gradients}
 \end{equation}
+
+\subsubsection{Vantagem da completude para o contexto clínico}
 
 Para radiografias odontológicas, o Integrated Gradients oferece uma
 vantagem crucial: ele satisfaz o axioma da \textbf{completude}, que
@@ -419,6 +439,8 @@ da imagem, produzindo mapas de atenção multicabeça que revelam:
 
 \subsection{Contrafactuais: ``E se...?''}
 
+\subsubsection{Conceito e exemplo clínico}
+
 Explicações contrafactuais respondem à pergunta: \textbf{``O que
 precisaria mudar nesta imagem para que o diagnóstico fosse diferente?''}
 
@@ -429,6 +451,8 @@ precisaria mudar nesta imagem para que o diagnóstico fosse diferente?''}
   fosse 30\% menor, o modelo classificaria como ICDAS 2 (cárie em
   esmalte) com 78\% de confiança.''}
 \end{mdframed}
+
+\subsubsection{Valor clínico das explicações contrafactuais}
 
 Este tipo de explicação é particularmente valioso em contexto clínico,
 pois:

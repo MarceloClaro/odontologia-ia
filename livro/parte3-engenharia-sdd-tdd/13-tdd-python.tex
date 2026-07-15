@@ -198,20 +198,24 @@ Propriedades computadas:
 
 O módulo \texttt{test\_helpers} fornece três geradores principais:
 
-\begin{enumerate}
-  \item \textbf{\texttt{create\_test\_radiograph(size, n\_classes, random\_state)}}
-    — Gera um dataset de radiografias sintéticas com estruturas elípticas
-    simulando dentes. Ideal para testar pipelines de classificação de imagens.
+\subsubsection{Radiografias sintéticas}
 
-  \item \textbf{\texttt{create\_test\_patient(patient\_id, idade, fumante, diabetes, periodontal\_stage)}}
-    — Cria um registro de paciente odontológico com dados clínicos simulados:
-    32 dentes (notação FDI), profundidade de sondagem, mobilidade e exames.
+\textbf{\texttt{create\_test\_radiograph(size, n\_classes, random\_state)}}
+— Gera um dataset de radiografias sintéticas com estruturas elípticas
+simulando dentes. Ideal para testar pipelines de classificação de imagens.
 
-  \item \textbf{\texttt{generate\_periodontal\_dataset(n\_samples, random\_state)}}
-    — Gera dataset tabular com 10 features periodontais: profundidade de
-    sondagem, nível de inserção, sangramento, perda óssea, mobilidade, placa,
-    fumante, diabetes, idade e higiene oral.
-\end{enumerate}
+\subsubsection{Dados de paciente odontológico}
+
+\textbf{\texttt{create\_test\_patient(patient\_id, idade, fumante, diabetes, periodontal\_stage)}}
+— Cria um registro de paciente odontológico com dados clínicos simulados:
+32 dentes (notação FDI), profundidade de sondagem, mobilidade e exames.
+
+\subsubsection{Dataset periodontal tabular}
+
+\textbf{\texttt{generate\_periodontal\_dataset(n\_samples, random\_state)}}
+— Gera dataset tabular com 10 features periodontais: profundidade de
+sondagem, nível de inserção, sangramento, perda óssea, mobilidade, placa,
+fumante, diabetes, idade e higiene oral.
 
 \begin{pratica}{Criando datasets sintéticos para TDD odontológico}
   Objetivo: Utilizar os geradores do \texttt{odontoia.tdd.test\_helpers}

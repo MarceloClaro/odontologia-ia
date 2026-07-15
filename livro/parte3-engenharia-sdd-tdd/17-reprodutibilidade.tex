@@ -18,10 +18,22 @@ científica e clínica.
 
 \subsection{A crise de reprodutibilidade}
 
+\subsubsection{O problema da reprodutibilidade na ciência}
+
 Em 2016, a revista \textit{Nature} publicou uma pesquisa histórica:
 \textbf{mais de 70\% dos cientistas já tentaram — e falharam — em
-reproduzir experimentos de outros pesquisadores}. Na IA odontológica,
-o problema é agravado por três fatores:
+reproduzir experimentos de outros pesquisadores}.
+
+\citacaoativa{baker2016reproducibility}{10.1038/533452a}{%
+  ``A reprodutibilidade é um dos pilares do método científico. Sem ela,
+  a ciência se torna anedótica, e a confiança pública na pesquisa se
+  erosão.''}
+
+\indice{reprodutibilidade computacional} \indice{crise de reprodutibilidade}
+
+\subsubsection{Fatores agravantes na IA odontológica}
+
+Na IA odontológica, o problema é agravado por três fatores:
 
 \begin{enumerate}
   \item \textbf{Datasets privados}: a maioria dos datasets odontológicos
@@ -32,17 +44,12 @@ o problema é agravado por três fatores:
     size, augmentações — pequenas variações produzem grandes diferenças.
 \end{enumerate}
 
-\citacaoativa{baker2016reproducibility}{10.1038/533452a}{%
-  ``A reprodutibilidade é um dos pilares do método científico. Sem ela,
-  a ciência se torna anedótica, e a confiança pública na pesquisa se
-  erosão.''}
-
-\indice{reprodutibilidade computacional} \indice{crise de reprodutibilidade}
-
 \subsection{Os 5 pilares da reprodutibilidade}
 
 Para um projeto de IA odontológica ser considerado reproduzível, ele
 deve atender a cinco pilares:
+
+\subsubsection{Código, ambiente e dataset}
 
 \begin{enumerate}
   \item \textbf{Código aberto e versionado}: repositório Git público com
@@ -55,7 +62,11 @@ deve atender a cinco pilares:
   \item \textbf{Dataset documentado}: se não puder ser compartilhado,
     descreva exatamente como foi obtido, processado e dividido. Forneça
     um \textbf{Data Card} (Seção~17.4).
+\end{enumerate}
 
+\subsubsection{Scripts e métricas}
+
+\begin{enumerate}
   \item \textbf{Scripts de treinamento completos}: não apenas o modelo
     treinado, mas o script que o produziu — incluindo todas as
     augmentações, callbacks e seeds aleatórias.
@@ -98,6 +109,8 @@ para projetos odontológicos.
 
 \subsection{Recomendações práticas}
 
+\subsubsection{Para código e datasets}
+
 \begin{itemize}
   \item \textbf{Para código}: MIT se quiser máxima adoção; Apache 2.0 se
     quiser proteção de patentes; GPLv3 se quiser garantir que derivados
@@ -107,7 +120,11 @@ para projetos odontológicos.
     CC0 (domínio público). \textbf{Evite} CC BY-NC se quiser que empresas
     usem seu dataset — o ``NC'' (não comercial) bloqueia uso por startups
     e indústria.
+\end{itemize}
 
+\subsubsection{Para modelos e documentação}
+
+\begin{itemize}
   \item \textbf{Para modelos treinados}: os pesos de uma rede neural são
     considerados ``obra derivada'' do dataset de treinamento. Se o dataset
     for CC BY-NC, o modelo também será NC.
@@ -571,7 +588,7 @@ lista exaustiva:
 
 \section{Ética de Uso de Código Alheio — Casos Reais}
 
-\subsection{Caso 1: O Perigo do Copy-Paste sem Licença}
+\subsubsection{Caso 1: O Perigo do Copy-Paste sem Licença}
 
 Em 2023, um grupo de pesquisa brasileiro publicou um artigo descrevendo
 um ``novo'' classificador de lesões bucais. Uma auditoria revelou que
@@ -580,7 +597,7 @@ não mencionava a fonte, e o código derivado foi publicado sob licença
 proprietária. Resultado: \textbf{retratação do artigo} e danos à
 reputação do grupo.
 
-\subsection{Caso 2: Dataset ``Anonimizado'' que Não Era}
+\subsubsection{Caso 2: Dataset ``Anonimizado'' que Não Era}
 
 Um dataset de radiografias panorâmicas publicado no Kaggle como ``CC0''
 (domínio público) foi retirado do ar após pesquisadores descobrirem que
@@ -594,7 +611,7 @@ identificáveis.
 manual. Automação sem verificação humana é insuficiente para conformidade
 com a LGPD.}
 
-\subsection{Lições Aprendidas}
+\subsubsection{Lições Aprendidas}
 
 \begin{enumerate}
   \item \textbf{Atribuição é lei, não cortesia.} Copiar código sem

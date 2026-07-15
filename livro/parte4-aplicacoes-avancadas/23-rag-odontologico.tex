@@ -91,8 +91,10 @@ O primeiro passo do RAG é transformar uma coleção de documentos (artigos cien
     \begin{itemize}
         \item \textbf{Fixa}: Divisão a cada $N$ tokens, independente da estrutura do texto;
         \item \textbf{Estrutural}: Divisão por seções do artigo (Introdução, Métodos, Resultados, Discussão);
-        \item \textbf{Deslizante (\textit{sliding window})}: Sobreposição de 10--20\% entre chunks adjacentes para evitar cortar informações no limite.
-    \end{itemize}
+    \item \textbf{Deslizante (\textit{sliding window})}: Sobreposição de 10--20\% entre chunks adjacentes para evitar cortar informações no limite.
+\end{itemize}
+
+\subsubsection{Geração de Embeddings e Armazenamento}\indice{embeddings}\indice{banco vetorial}\indice{ChromaDB}
 
     \item \textbf{Geração de embeddings}: Cada chunk é convertido em um vetor denso de dimensionalidade fixa (ex.: 768 para BERT-based, 1536 para Ada-002 da OpenAI) usando um modelo de \textit{embedding}. O embedding captura o significado semântico do texto, de modo que textos com significado similar tenham vetores próximos no espaço;
 
@@ -102,6 +104,8 @@ O primeiro passo do RAG é transformar uma coleção de documentos (artigos cien
 \subsection{Recuperação: Busca Semântica com Embeddings}
 
 Quando o usuário faz uma pergunta (ex.: ``Qual a evidência para regeneração óssea guiada com membrana de PTFE vs. colágeno em defeitos peri-implantares?''), o sistema:
+
+\subsubsection{Processo de Recuperação}\indice{busca semântica}\indice{re-ranking}
 
 \begin{enumerate}
     \item Converte a pergunta em um embedding usando o mesmo modelo da indexação;
@@ -147,6 +151,8 @@ nos artigos consultados para responder esta pergunta."
 
 ## Resposta fundamentada (com citacoes de DOI):
 \end{lstlisting}
+
+\subsubsection{Salvaguardas contra Alucinação}\indice{prompt engineering}\indice{citação obrigatória}
 
 Este design de prompt implementa três salvaguardas contra alucinação:
 \begin{enumerate}
@@ -210,6 +216,8 @@ Em odontologia baseada em evidências, a rastreabilidade é um requisito não-ne
 
 \subsection{Controle de Qualidade da Recuperação}
 
+\subsubsection{Estratégias de Filtragem}\indice{filtragem}\indice{nível de evidência}\indice{deduplicação}
+
 Nem todo chunk recuperado é relevante ou de alta qualidade. Estratégias de filtragem incluem:
 \begin{itemize}
     \item \textbf{Limiar de similaridade}: Descartar chunks com similaridade de cosseno $< 0,70$ (baixa relevância semântica);
@@ -222,6 +230,8 @@ Nem todo chunk recuperado é relevante ou de alta qualidade. Estratégias de fil
 \section{Controle de Alucinação: Evidência como Requisito Mínimo}
 
 \subsection{Tipos de Alucinação em RAG Odontológico}
+
+\subsubsection{Categorias de Alucinação em RAG}\indice{alucinação}\indice{extrapolação}\indice{citação}
 
 Mesmo com RAG, alucinações podem ocorrer. É útil categorizá-las para desenvolver contramedidas específicas:
 
@@ -439,6 +449,8 @@ Coverage & $\ge 80\%$ & Benchmark & Base cobre as perguntas esperadas? \\
 
 Em uma clínica de periodontia universitária, 15 residentes utilizaram um sistema RAG odontológico (indexando 8.500 artigos periodontais do PubMed, 2018--2025) como ferramenta de suporte durante o planejamento de casos complexos. Durante 6 meses e 320 consultas, o RAG foi consultado em 68\% das sessões de planejamento.
 
+\subsubsection{Cenários de Uso e Avaliação}\indice{periodontia}\indice{RAG}\indice{suporte à decisão}
+
 Os cenários de uso mais frequentes foram:
 \begin{itemize}
     \item \textbf{Seleção de biomaterial para regeneração}: ``Qual a evidência para uso de rhPDGF-BB vs. PRF na regeneração de defeitos infraósseos de 3 paredes?'' --- o RAG recuperou 5 artigos (3 ECRs, 2 revisões sistemáticas) sintetizando as evidências comparativas;
@@ -456,6 +468,8 @@ O Colégio Brasileiro de Cirurgia e Traumatologia Buco-Maxilo-Facial (CBCBMF) im
 
 \citacaoativa{doi-48550-arxiv-2312-10997}{10.48550/arxiv.2312.10997}{Sistemas RAG de atualização contínua (\textit{live RAG}) representam a evolução natural do conceito: em vez de indexar um corpus estático, o sistema é acoplado a feeds de publicação (PubMed RSS, arXiv, Cochrane updates) que alimentam continuamente a base vetorial. A cada novo artigo relevante, os chunks são indexados em tempo real e disponibilizados imediatamente para consultas. Esta arquitetura resolve o problema de obsolescência que afeta tanto LLMs quanto RAGs estáticos.}
 
+\subsubsection{Resultados da Implementação}\indice{diretrizes clínicas}\indice{living guidelines}\indice{atualização contínua}
+
 Em 18 meses de operação:
 \begin{itemize}
     \item O RAG processou 2.400 novos artigos, dos quais 47 (2\%) foram sinalizados como potencialmente impactantes para diretrizes existentes;
@@ -467,7 +481,11 @@ Em 18 meses de operação:
 
 \subsection{Caso 3: RAG como Ferramenta de Educação Continuada}
 
-Em um programa de educação continuada para cirurgiões-dentistas da atenção primária no estado do Ceará, um sistema RAG foi disponibilizado via aplicativo móvel (WhatsApp bot + interface web) para consulta rápida de evidências durante o atendimento clínico. O sistema indexava 12.000 artigos em português e inglês, com interface simplificada:
+Em um programa de educação continuada para cirurgiões-dentistas da atenção primária no estado do Ceará, um sistema RAG foi disponibilizado via aplicativo móvel (WhatsApp bot + interface web) para consulta rápida de evidências durante o atendimento clínico.
+
+\subsubsection{Implementação e Resultados}\indice{educação continuada}\indice{WhatsApp}\indice{atenção primária}
+
+O sistema indexava 12.000 artigos em português e inglês, com interface simplificada:
 \begin{itemize}
     \item O dentista enviava uma pergunta em linguagem natural (ex.: ``posso prescrever amoxicilina para abscesso periapical agudo em paciente alérgico a penicilina? Qual alternativa?'');\item O RAG recuperava evidências e gerava resposta com citações, em linguagem acessível, em $<5$ segundos;
     \item Se a pergunta envolvesse prescrição ou dosagem, o sistema automaticamente incluía um aviso de que a decisão final é do profissional.
@@ -481,6 +499,8 @@ Em 12 meses, 480 dentistas realizaram 6.200 consultas ao RAG. As especialidades 
 
 Uma limitação do RAG convencional é que a busca semântica pode recuperar chunks similares à pergunta, mas não necessariamente os mais informativos. Por exemplo, para a pergunta ``Qual a taxa de sucesso do tratamento endodôntico em dentes com lesão periapical $>5$ mm?'', o RAG pode recuperar chunks que mencionam ``tratamento endodôntico'' e ``lesão periapical'', mas que estão em seções de Introdução ou Discussão --- não contendo os dados quantitativos que o clínico busca.
 
+\subsubsection{Arquitetura em Duas Etapas}\indice{RAG hierárquico}\indice{cross-encoder}
+
 O RAG hierárquico resolve este problema com uma arquitetura em duas etapas:
 \begin{enumerate}
     \item \textbf{Primeira etapa}: Busca por similaridade nos resumos (\textit{abstracts}) dos artigos --- que sintetizam o conteúdo completo. Recupera os $k_1$ artigos mais relevantes;
@@ -492,6 +512,8 @@ Esta abordagem melhora significativamente a precisão da recuperação, especial
 \subsection{RAG com Grafos de Citação}
 
 Outra estratégia avançada é enriquecer o RAG com informações de grafo de citações: artigos são conectados em um grafo direcionado onde arestas representam citações. Quando o RAG recupera um artigo, também recupera seus artigos citantes (que o referenciam) e citados (que ele referencia), permitindo ao LLM contextualizar a evidência na literatura mais ampla.
+
+\subsubsection{Contextualização Temporal da Evidência}\indice{grafo de citações}\indice{contradição}\indice{knowledge graph}
 
 Por exemplo, se um artigo de 2020 reporta um achado, e um artigo de 2024 o contesta com nova evidência, o RAG com grafo de citações pode alertar: ``O artigo [1] (2020) reporta sensibilidade de 92\%, mas uma metanálise subsequente [2] (2024) encontrou sensibilidade pooled de 85\%, sugerindo que a estimativa original pode ter sido otimista.'' Esta capacidade de contextualização temporal é impossível em RAG convencional e representa um salto qualitativo na inteligência do sistema.
 
